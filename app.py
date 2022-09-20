@@ -145,24 +145,7 @@ def explore() -> None:
 
         with col1: st.plotly_chart(load_data("plotly", os.path.join(simulation_folder, "carMatrix_plot.json")), use_container_width=True)
         with col2: st.plotly_chart(load_data("plotly", os.path.join(simulation_folder, "partialMatrix_plot.json")), use_container_width=True)
-
-        ################### NON Masked ###################
-        if show_non_masked:    
-            st.markdown("""<hr style="height:5px;border:none;color:#ff1100;background-color:#ff1100;" /> """, unsafe_allow_html=True)
-            st.markdown("<h3 style='text-align: center; color: black;'>Results without Masked Matrix</h3>", unsafe_allow_html=True)
-            
-            col1, col2 = st.columns(2, gap="small")
-            with col1: st.markdown("<h5 style='text-align: center; color: black;'>RMSE [veh]: {:.3f}</h5>".format(merged.loc[exp_number, "RMSE [veh]"]), unsafe_allow_html=True)
-            with col2: st.markdown("<h5 style='text-align: center; color: black;'>MAE [veh]: {:.3f}</h5>".format(merged.loc[exp_number, "MAE [veh]"]), unsafe_allow_html=True)
-            
-            col1, col2 = st.columns(2, gap="small")
-            with col1: st.plotly_chart(load_data("plotly", os.path.join(exp_folder, "actual_data.json")), use_container_width=True)
-            with col2: st.plotly_chart(load_data("plotly", os.path.join(exp_folder, "best_output.json")), use_container_width=True)
-
-            col1, col2 = st.columns(2, gap="small")
-            with col1: st.plotly_chart(load_data("plotly", os.path.join(exp_folder, "residuals.json")), use_container_width=True)
-            with col2: st.plotly_chart(load_data("plotly", os.path.join(exp_folder, "fitness.json")), use_container_width=True)
-       
+     
         ################### Masked ###################
         if show_masked:
             st.markdown("""<hr style="height:5px;border:none;color:#ff1100;background-color:#ff1100;" /> """, unsafe_allow_html=True)
@@ -177,6 +160,23 @@ def explore() -> None:
 
             col1, col2 = st.columns(2, gap="small")
             with col1: st.plotly_chart(load_data("plotly", os.path.join(exp_folder, "residuals_masked.json")), use_container_width=True)
+            with col2: st.plotly_chart(load_data("plotly", os.path.join(exp_folder, "fitness.json")), use_container_width=True)
+        
+        ################### NON Masked ###################
+        if show_non_masked:    
+            st.markdown("""<hr style="height:5px;border:none;color:#ff1100;background-color:#ff1100;" /> """, unsafe_allow_html=True)
+            st.markdown("<h3 style='text-align: center; color: black;'>Results Matrix without Masked</h3>", unsafe_allow_html=True)
+            
+            col1, col2 = st.columns(2, gap="small")
+            with col1: st.markdown("<h5 style='text-align: center; color: black;'>RMSE [veh]: {:.3f}</h5>".format(merged.loc[exp_number, "RMSE [veh]"]), unsafe_allow_html=True)
+            with col2: st.markdown("<h5 style='text-align: center; color: black;'>MAE [veh]: {:.3f}</h5>".format(merged.loc[exp_number, "MAE [veh]"]), unsafe_allow_html=True)
+            
+            col1, col2 = st.columns(2, gap="small")
+            with col1: st.plotly_chart(load_data("plotly", os.path.join(exp_folder, "actual_data.json")), use_container_width=True)
+            with col2: st.plotly_chart(load_data("plotly", os.path.join(exp_folder, "best_output.json")), use_container_width=True)
+
+            col1, col2 = st.columns(2, gap="small")
+            with col1: st.plotly_chart(load_data("plotly", os.path.join(exp_folder, "residuals.json")), use_container_width=True)
             with col2: st.plotly_chart(load_data("plotly", os.path.join(exp_folder, "fitness.json")), use_container_width=True)
     
 
