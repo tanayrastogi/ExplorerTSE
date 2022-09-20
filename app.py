@@ -3,7 +3,7 @@ import pandas as pd
 import streamlit as st 
 from st_aggrid import GridOptionsBuilder, AgGrid
 from summary import plot_fundamental_diagram, load_data
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide", initial_sidebar_state="collapsed")
 
 SIMULATION_DATA_FOLDER      = "SimulationDataNew"
 EXPERIMENT_DATA_FOLDER      = "ExperimentResultsNew"
@@ -68,13 +68,13 @@ def explore() -> None:
     table = merged.copy()
     table.sort_values(by=['RMSE-M [veh]'], inplace=True)
     table = table.round(3)
-    col = ["EXP", "EXPName", "Car Flow", "Car Density", "Car Speed", "Probe Time", "Probe Distance", "RMSE-M [veh]", "MAE-M [veh]"]
+    col = ["EXP", "EXPName", "Car Flow", "Car Density", "Car Speed", "Probe Time", "Probe Distance", "Probe Speed", "RMSE-M [veh]", "MAE-M [veh]"]
     table = table[col]
 
     # Show interactive table
     gb = GridOptionsBuilder.from_dataframe(table)
     gb.configure_pagination(paginationAutoPageSize=True) #Add pagination
-    gb.configure_default_column(min_column_width=1) #Column width
+    gb.configure_default_column(min_column_width=2) #Column width
     gb.configure_side_bar() #Add a sidebar
     gb.configure_selection('multiple', use_checkbox=True) #Enable multi-row selection
     gridOptions = gb.build()
