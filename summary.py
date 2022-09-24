@@ -12,7 +12,6 @@ def plot_fundamental_diagram(data: pd.DataFrame,
                             plotTitle:str,
                             hightIDX:int,
                             scaleColor="Reds",
-                            X_range=[0, 0.5],                          
                             )->go.Figure():
     """
     Plots FD scatter plot with marker colors as the error
@@ -27,7 +26,7 @@ def plot_fundamental_diagram(data: pd.DataFrame,
                                         line=dict(color="Black", width=1),
                                         showscale=True,
                                         cmin=0,
-                                        cmax=3.5,
+                                        cmax=data[error_type].max(),
                                         colorbar=dict(title=error_type),
                                         colorscale=scaleColor),
                             customdata = [(nm, error) for nm, error in  zip(expName, data[error_type].round(3))],
@@ -56,7 +55,7 @@ def plot_fundamental_diagram(data: pd.DataFrame,
     fig.add_hline(y=data[Y_data].max()/2,
                 line_width=1, line_dash="dash", line_color="black")
 
-    fig.update_xaxes(title_text=X_title, range=X_range,
+    fig.update_xaxes(title_text=X_title,
                     showline=True, linewidth=2, linecolor='black', mirror=True)
 
     fig.update_yaxes(title_text=Y_title,

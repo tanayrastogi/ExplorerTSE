@@ -1,25 +1,32 @@
+from distutils.log import INFO
 import os
+from tkinter.tix import COLUMN
 import pandas as pd
 import streamlit as st 
 from st_aggrid import GridOptionsBuilder, AgGrid
 from summary import plot_fundamental_diagram, load_data
+import json
 st.set_page_config(layout="wide", initial_sidebar_state="collapsed")
 
-SIMULATION_DATA_FOLDER      = "SimulationDataNew"
-EXPERIMENT_DATA_FOLDER      = "ExperimentResultsNew"
-EXPERIMENT_RESULTS          = "ResultsNew.csv"
-SCENARIO_INFO_FILE          = "ScenarioData.csv"
 
-                                                   
+SIMULATION_DATA_FOLDER      = "SimulationData"
+EXPERIMENT_DATA_FOLDER      = "ExperimentResults"
+INFO_FOLDER                 = "Info"
+EXPERIMENT_RESULTS          = os.path.join(INFO_FOLDER, "Results.csv")
+SCENARIO_INFO_FILE          = os.path.join(INFO_FOLDER, "ScenarioData.csv")
+
+
+                                               
 ################################################################################################
                                     #### RESULTS EXPLORE ####
 ################################################################################################
 def explore() -> None:
-
     with st.sidebar:
         st.markdown("### Select plots to show")
         show_non_masked = st.checkbox("Show Non Masked Data",  value=False)
         show_masked     = st.checkbox("Show Masked Data",  value=True)
+        show_fd         = st.checkbox("Show Fundamental Digrams", value=True)
+        show_actual_data= st.checkbox("Show Actual Data", value=True)
 
     st.markdown("<h1 style='text-align: center; color: red;'>GA-MCTM Analysis using Simulated Data</h1>", unsafe_allow_html=True)
     col1, col2 = st.columns(2)
@@ -60,6 +67,9 @@ def explore() -> None:
     ## Merge Scenario and Results table ##
     merged = scenario.join(result)
     merged["EXPName"] = merged.index.values
+    merged["Scenario"] = merged["EXPName"].apply(lambda x: x.split("_")[0])
+    merged["ProbeID"] = merged["EXPName"].apply(lambda x: x.split("_")[1])
+    merged = merged.dropna(axis=0)
     merged.set_index("EXP", drop=False, inplace=True)
     
     ########## TABLE ############
@@ -68,7 +78,7 @@ def explore() -> None:
     table = merged.copy()
     table.sort_values(by=['RMSE-M [veh]'], inplace=True)
     table = table.round(3)
-    col = ["EXP", "EXPName", "Car Flow", "Car Density", "Car Speed", "Probe Time", "Probe Distance", "Probe Speed", "RMSE-M [veh]", "MAE-M [veh]"]
+    col = ["EXP", "Scenario", "ProbeID", "EXPName", "Car Flow", "Car Density", "Car Speed", "Probe Time", "Probe Distance", "Probe Speed", "RMSE-M [veh]", "MAE-M [veh]"]
     table = table[col]
 
     # Show interactive table
@@ -76,7 +86,7 @@ def explore() -> None:
     gb.configure_pagination(paginationAutoPageSize=True) #Add pagination
     gb.configure_default_column(min_column_width=2) #Column width
     gb.configure_side_bar() #Add a sidebar
-    gb.configure_selection('multiple', use_checkbox=True) #Enable multi-row selection
+    gb.configure_selection('single', use_checkbox=True) #Enable multi-row selection
     gridOptions = gb.build()
     
     # Result Table
@@ -93,6 +103,17 @@ def explore() -> None:
                         reload_data=True
                     )
     selected_data = selected_data["selected_rows"]
+
+    if show_fd:    
+        with st.expander("Show FD for Simulated Data", expanded=False):
+            col1, col2 = st.columns(2, gap="small")
+            with col1: st.plotly_chart(load_data("plotly", "Info/cDens_vs_cFlow.json"), use_container_width=True)
+            with col2: st.plotly_chart(load_data("plotly", "Info/cDens_vs_cSpeed.json"), use_container_width=True)
+            col1, col2 = st.columns(2, gap="small")
+            with col1: st.plotly_chart(load_data("plotly", "Info/cFlow_vs_cSpeed.json"), use_container_width=True)
+            with col2: st.plotly_chart(load_data("plotly", "Info/pSpeed_vs_cSpeed.json"), use_container_width=True)
+
+
     for data in selected_data:
         # Select the experiment number and show plots for the exp
         exp_number = int(data["EXP"])
@@ -102,49 +123,50 @@ def explore() -> None:
         st.markdown("""<hr style="height:5px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
         st.markdown("<h2 style='text-align: center; color: red;'>EXPERIMENT {}</h2>".format(exp_number), unsafe_allow_html=True) 
 
-        ########## FD ############
-        col1, col2 = st.columns(2, gap="small")
-        with col1: st.plotly_chart(plot_fundamental_diagram(merged,
-                                                        X_data="Car Density", X_title="Traffic Density [veh/m]",
-                                                        Y_data="Car Flow", Y_title="Traffic Flow [veh/s]",
-                                                        error_type="RMSE [veh]", 
-                                                        hightIDX = exp_number,
-                                                        plotTitle="Flow-vs-Density RMSE analysis"))
-        with col2: st.plotly_chart(plot_fundamental_diagram(merged,
-                                                        X_data="Car Density", X_title="Traffic Density [veh/m]",
+        if show_fd:
+            ########## FD ############
+            col1, col2 = st.columns(2, gap="small")
+            with col1: st.plotly_chart(plot_fundamental_diagram(merged,
+                                                            X_data="Car Density", X_title="Traffic Density [veh/m]",
+                                                            Y_data="Car Flow", Y_title="Traffic Flow [veh/s]",
+                                                            error_type="RMSE [veh]", 
+                                                            hightIDX = exp_number,
+                                                            plotTitle="Flow-vs-Density RMSE analysis"))
+            with col2: st.plotly_chart(plot_fundamental_diagram(merged,
+                                                            X_data="Car Density", X_title="Traffic Density [veh/m]",
+                                                            Y_data="Car Speed", Y_title="Traffic Speed [m/s]",
+                                                            error_type="RMSE [veh]", 
+                                                            hightIDX = exp_number, 
+                                                            plotTitle="Speed-vs-Density RMSE analysis",
+                                                            scaleColor="Blues"))
+            col1, col2 = st.columns(2, gap="small")
+            with col1: st.plotly_chart(plot_fundamental_diagram(merged,
+                                                            X_data="Car Flow", X_title="Traffic Flow [veh/s]",
+                                                            Y_data="Car Speed", Y_title="Traffic Speed [m/s]",
+                                                            error_type="RMSE [veh]", 
+                                                            hightIDX = exp_number,
+                                                            plotTitle="Speed-vs-Flow RMSE analysis",
+                                                            scaleColor="Greens"))
+            with col2: st.plotly_chart(plot_fundamental_diagram(merged,
+                                                        X_data="Probe Speed", X_title="Probe Speed [m/s]",
                                                         Y_data="Car Speed", Y_title="Traffic Speed [m/s]",
                                                         error_type="RMSE [veh]", 
-                                                        hightIDX = exp_number, 
-                                                        plotTitle="Speed-vs-Density RMSE analysis",
-                                                        scaleColor="Blues"))
-        col1, col2 = st.columns(2, gap="small")
-        with col1: st.plotly_chart(plot_fundamental_diagram(merged,
-                                                        X_data="Car Flow", X_title="Traffic Flow [veh/s]",
-                                                        Y_data="Car Speed", Y_title="Traffic Speed [m/s]",
-                                                        error_type="RMSE [veh]", 
                                                         hightIDX = exp_number,
-                                                        plotTitle="Speed-vs-Flow RMSE analysis",
-                                                        scaleColor="Greens", X_range=[0, 1]))
-        with col2: st.plotly_chart(plot_fundamental_diagram(merged,
-                                                    X_data="Probe Speed", X_title="Probe Speed [m/s]",
-                                                    Y_data="Car Speed", Y_title="Traffic Speed [m/s]",
-                                                    error_type="RMSE [veh]", 
-                                                    hightIDX = exp_number,
-                                                    plotTitle="Speed-vs-Speed RMSE analysis",
-                                                    scaleColor="viridis", X_range=[0, 16]))
+                                                        plotTitle="Speed-vs-Speed RMSE analysis",
+                                                        scaleColor="viridis"))
 
 
         ########## RESULTS ############
+        if show_actual_data:
+            ############## ACTUAL DATA ######################
+            st.markdown("""<hr style="height:5px;border:none;color:#ff1100;background-color:#ff1100;" /> """, unsafe_allow_html=True)
+            st.markdown("<h3 style='text-align: center; color: Black;'>Actual Simulated Data </h3>", unsafe_allow_html=True)
+            col1, col2 = st.columns(2, gap="small")
+            with col1: st.plotly_chart(load_data("plotly", os.path.join(simulation_folder, "carData_trajectory_plot.json")), use_container_width=True)
+            with col2: st.plotly_chart(load_data("plotly", os.path.join(simulation_folder, "partialData_trajectory_plot.json")), use_container_width=True)
 
-
-        ############## ACTUAL DATA ######################
-        st.markdown("<h3 style='text-align: center; color: Black;'>Actual Simulated Data </h3>", unsafe_allow_html=True)
-        col1, col2 = st.columns(2, gap="small")
-        with col1: st.plotly_chart(load_data("plotly", os.path.join(simulation_folder, "carData_trajectory_plot.json")), use_container_width=True)
-        with col2: st.plotly_chart(load_data("plotly", os.path.join(simulation_folder, "partialData_trajectory_plot.json")), use_container_width=True)
-
-        with col1: st.plotly_chart(load_data("plotly", os.path.join(simulation_folder, "carMatrix_plot.json")), use_container_width=True)
-        with col2: st.plotly_chart(load_data("plotly", os.path.join(simulation_folder, "partialMatrix_plot.json")), use_container_width=True)
+            with col1: st.plotly_chart(load_data("plotly", os.path.join(simulation_folder, "carMatrix_plot.json")), use_container_width=True)
+            with col2: st.plotly_chart(load_data("plotly", os.path.join(simulation_folder, "partialMatrix_plot.json")), use_container_width=True)
      
         ################### Masked ###################
         if show_masked:
@@ -188,3 +210,17 @@ def main()-> None:
 
 if __name__ =="__main__":
     main()
+
+    # # Read CSV result
+    # result   = pd.read_csv(EXPERIMENT_RESULTS, sep=";", header=0)
+    # result["fullnames"] = result.apply(lambda x: x["Scenario"]+"_"+x["ProbeID"]+"_"+x["Timestamp"], axis=1)
+    # result.set_index("fullnames", drop=True, inplace=True)
+    # result["RMSE [veh]"] = result["RMSE Error"] * 20.0
+    # result["MAE [veh]"] = result["MAE Error"] * 20.0
+    # result["RMSE-M [veh]"] = result["RMSE Error - Masked"] * 20.0
+    # result["MAE-M [veh]"] = result["MAE Error - Masked"] * 20.0
+    # scenario = pd.read_csv(SCENARIO_INFO_FILE, sep=";", header=0, index_col=0)
+    # ## Merge Scenario and Results table ##
+    # merged = scenario.join(result)
+    # merged["EXPName"] = merged.index.values
+    # merged.set_index("EXP", drop=False, inplace=True)
