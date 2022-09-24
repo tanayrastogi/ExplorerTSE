@@ -1,11 +1,8 @@
-from distutils.log import INFO
 import os
-from tkinter.tix import COLUMN
 import pandas as pd
 import streamlit as st 
 from st_aggrid import GridOptionsBuilder, AgGrid
 from summary import plot_fundamental_diagram, load_data
-import json
 st.set_page_config(layout="wide", initial_sidebar_state="collapsed")
 
 
