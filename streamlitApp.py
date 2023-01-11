@@ -1,13 +1,8 @@
 import os
 import pandas as pd
-import numpy as np 
 import plotting as plt
 import streamlit as st
 from st_aggrid import GridOptionsBuilder, AgGrid
-
-from scipy.optimize import curve_fit
-from cell_transmission_model import FD
-from sklearn.metrics import r2_score
 
 st.set_page_config(layout="wide", initial_sidebar_state="collapsed")
 
