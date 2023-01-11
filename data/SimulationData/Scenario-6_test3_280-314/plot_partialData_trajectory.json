@@ -1,0 +1,4049 @@
+{
+  "data": [
+    {
+      "hovertemplate": "vehicle_id=f1.112<br>timestep_time=%{x}<br>vehicle_x=%{y}<extra></extra>",
+      "legendgroup": "f1.112",
+      "line": {
+        "color": "#636efa",
+        "dash": "solid",
+        "width": 2
+      },
+      "marker": {
+        "symbol": "circle",
+        "size": 5
+      },
+      "mode": "markers+lines",
+      "name": "f1.112",
+      "orientation": "v",
+      "showlegend": true,
+      "x": [
+        280.0,
+        280.25,
+        280.5,
+        280.75,
+        281.0,
+        281.25,
+        281.5,
+        281.75,
+        282.0,
+        282.25,
+        282.5
+      ],
+      "xaxis": "x",
+      "y": [
+        35.46,
+        37.6,
+        39.74,
+        41.88,
+        44.02,
+        46.432500000000005,
+        48.845,
+        51.2575,
+        53.67,
+        56.1175,
+        58.565
+      ],
+      "yaxis": "y",
+      "type": "scatter"
+    },
+    {
+      "hovertemplate": "vehicle_id=f1.111<br>timestep_time=%{x}<br>vehicle_x=%{y}<extra></extra>",
+      "legendgroup": "f1.111",
+      "line": {
+        "color": "#EF553B",
+        "dash": "solid",
+        "width": 2
+      },
+      "marker": {
+        "symbol": "circle",
+        "size": 5
+      },
+      "mode": "markers+lines",
+      "name": "f1.111",
+      "orientation": "v",
+      "showlegend": true,
+      "x": [
+        280.0,
+        280.25,
+        280.5,
+        280.75,
+        281.0,
+        281.25
+      ],
+      "xaxis": "x",
+      "y": [
+        59.48,
+        61.98,
+        64.48,
+        66.98,
+        69.48,
+        71.64750000000001
+      ],
+      "yaxis": "y",
+      "type": "scatter"
+    },
+    {
+      "hovertemplate": "vehicle_id=f1.110<br>timestep_time=%{x}<br>vehicle_x=%{y}<extra></extra>",
+      "legendgroup": "f1.110",
+      "line": {
+        "color": "#00cc96",
+        "dash": "solid",
+        "width": 2
+      },
+      "marker": {
+        "symbol": "circle",
+        "size": 5
+      },
+      "mode": "markers+lines",
+      "name": "f1.110",
+      "orientation": "v",
+      "showlegend": true,
+      "x": [
+        280.0,
+        280.25
+      ],
+      "xaxis": "x",
+      "y": [
+        77.04,
+        79.4525
+      ],
+      "yaxis": "y",
+      "type": "scatter"
+    },
+    {
+      "hovertemplate": "vehicle_id=f1.113<br>timestep_time=%{x}<br>vehicle_x=%{y}<extra></extra>",
+      "legendgroup": "f1.113",
+      "line": {
+        "color": "#ab63fa",
+        "dash": "solid",
+        "width": 2
+      },
+      "marker": {
+        "symbol": "circle",
+        "size": 5
+      },
+      "mode": "markers+lines",
+      "name": "f1.113",
+      "orientation": "v",
+      "showlegend": true,
+      "x": [
+        281.0,
+        281.25,
+        281.5,
+        281.75,
+        282.0,
+        282.25,
+        282.5,
+        282.75,
+        283.0,
+        283.25,
+        283.5
+      ],
+      "xaxis": "x",
+      "y": [
+        27.7,
+        29.7025,
+        31.705,
+        33.7075,
+        35.71,
+        38.08,
+        40.45,
+        42.82,
+        45.19,
+        47.3225,
+        49.455
+      ],
+      "yaxis": "y",
+      "type": "scatter"
+    },
+    {
+      "hovertemplate": "vehicle_id=f1.114<br>timestep_time=%{x}<br>vehicle_x=%{y}<extra></extra>",
+      "legendgroup": "f1.114",
+      "line": {
+        "color": "#FFA15A",
+        "dash": "solid",
+        "width": 2
+      },
+      "marker": {
+        "symbol": "circle",
+        "size": 5
+      },
+      "mode": "markers+lines",
+      "name": "f1.114",
+      "orientation": "v",
+      "showlegend": true,
+      "x": [
+        282.25,
+        282.5,
+        282.75,
+        283.0,
+        283.25,
+        283.5,
+        283.75,
+        284.0,
+        284.25,
+        284.5
+      ],
+      "xaxis": "x",
+      "y": [
+        17.065,
+        19.47,
+        21.875,
+        24.28,
+        26.6275,
+        28.975,
+        31.3225,
+        33.67,
+        36.120000000000005,
+        38.57
+      ],
+      "yaxis": "y",
+      "type": "scatter"
+    },
+    {
+      "hovertemplate": "vehicle_id=f1.115<br>timestep_time=%{x}<br>vehicle_x=%{y}<extra></extra>",
+      "legendgroup": "f1.115",
+      "line": {
+        "color": "#19d3f3",
+        "dash": "solid",
+        "width": 2
+      },
+      "marker": {
+        "symbol": "circle",
+        "size": 5
+      },
+      "mode": "markers+lines",
+      "name": "f1.115",
+      "orientation": "v",
+      "showlegend": true,
+      "x": [
+        283.75,
+        284.0,
+        284.25,
+        284.5,
+        284.75,
+        285.0,
+        285.25,
+        285.5,
+        285.75,
+        286.0,
+        286.25,
+        286.5
+      ],
+      "xaxis": "x",
+      "y": [
+        2.3499999999999996,
+        4.75,
+        7.2075,
+        9.665,
+        12.1225,
+        14.58,
+        16.8425,
+        19.105,
+        21.3675,
+        23.63,
+        25.97,
+        28.310000000000002
+      ],
+      "yaxis": "y",
+      "type": "scatter"
+    },
+    {
+      "hovertemplate": "vehicle_id=f1.116<br>timestep_time=%{x}<br>vehicle_x=%{y}<extra></extra>",
+      "legendgroup": "f1.116",
+      "line": {
+        "color": "#FF6692",
+        "dash": "solid",
+        "width": 2
+      },
+      "marker": {
+        "symbol": "circle",
+        "size": 5
+      },
+      "mode": "markers+lines",
+      "name": "f1.116",
+      "orientation": "v",
+      "showlegend": true,
+      "x": [
+        287.0,
+        287.25,
+        287.5,
+        287.75,
+        288.0,
+        288.25,
+        288.5,
+        288.75,
+        289.0,
+        289.25
+      ],
+      "xaxis": "x",
+      "y": [
+        0.86,
+        3.205,
+        5.550000000000001,
+        7.8950000000000005,
+        10.24,
+        12.595,
+        14.95,
+        17.305,
+        19.66,
+        22.12
+      ],
+      "yaxis": "y",
+      "type": "scatter"
+    },
+    {
+      "hovertemplate": "vehicle_id=f1.117<br>timestep_time=%{x}<br>vehicle_x=%{y}<extra></extra>",
+      "legendgroup": "f1.117",
+      "line": {
+        "color": "#B6E880",
+        "dash": "solid",
+        "width": 2
+      },
+      "marker": {
+        "symbol": "circle",
+        "size": 5
+      },
+      "mode": "markers+lines",
+      "name": "f1.117",
+      "orientation": "v",
+      "showlegend": true,
+      "x": [
+        289.0,
+        289.25,
+        289.5,
+        289.75,
+        290.0,
+        290.25,
+        290.5,
+        290.75,
+        291.0,
+        291.25
+      ],
+      "xaxis": "x",
+      "y": [
+        1.34,
+        3.74,
+        6.14,
+        8.54,
+        10.94,
+        13.254999999999999,
+        15.57,
+        17.884999999999998,
+        20.2,
+        22.6325
+      ],
+      "yaxis": "y",
+      "type": "scatter"
+    },
+    {
+      "hovertemplate": "vehicle_id=f1.118<br>timestep_time=%{x}<br>vehicle_x=%{y}<extra></extra>",
+      "legendgroup": "f1.118",
+      "line": {
+        "color": "#FF97FF",
+        "dash": "solid",
+        "width": 2
+      },
+      "marker": {
+        "symbol": "circle",
+        "size": 5
+      },
+      "mode": "markers+lines",
+      "name": "f1.118",
+      "orientation": "v",
+      "showlegend": true,
+      "x": [
+        291.25,
+        291.5,
+        291.75,
+        292.0,
+        292.25,
+        292.5,
+        292.75,
+        293.0,
+        293.25,
+        293.5
+      ],
+      "xaxis": "x",
+      "y": [
+        2.174999999999999,
+        4.479999999999999,
+        6.784999999999998,
+        9.09,
+        11.5075,
+        13.925,
+        16.3425,
+        18.76,
+        21.255000000000003,
+        23.75
+      ],
+      "yaxis": "y",
+      "type": "scatter"
+    },
+    {
+      "hovertemplate": "vehicle_id=f1.119<br>timestep_time=%{x}<br>vehicle_x=%{y}<extra></extra>",
+      "legendgroup": "f1.119",
+      "line": {
+        "color": "#FECB52",
+        "dash": "solid",
+        "width": 2
+      },
+      "marker": {
+        "symbol": "circle",
+        "size": 5
+      },
+      "mode": "markers+lines",
+      "name": "f1.119",
+      "orientation": "v",
+      "showlegend": true,
+      "x": [
+        294.0,
+        294.25,
+        294.5,
+        294.75,
+        295.0,
+        295.25,
+        295.5,
+        295.75,
+        296.0,
+        296.25
+      ],
+      "xaxis": "x",
+      "y": [
+        1.62,
+        3.9025,
+        6.185,
+        8.4675,
+        10.75,
+        13.1875,
+        15.625,
+        18.0625,
+        20.5,
+        22.96
+      ],
+      "yaxis": "y",
+      "type": "scatter"
+    },
+    {
+      "hovertemplate": "vehicle_id=f1.120<br>timestep_time=%{x}<br>vehicle_x=%{y}<extra></extra>",
+      "legendgroup": "f1.120",
+      "line": {
+        "color": "#636efa",
+        "dash": "solid",
+        "width": 2
+      },
+      "marker": {
+        "symbol": "circle",
+        "size": 5
+      },
+      "mode": "markers+lines",
+      "name": "f1.120",
+      "orientation": "v",
+      "showlegend": true,
+      "x": [
+        296.0,
+        296.25,
+        296.5,
+        296.75,
+        297.0,
+        297.25,
+        297.5,
+        297.75,
+        298.0,
+        298.25
+      ],
+      "xaxis": "x",
+      "y": [
+        2.21,
+        4.41,
+        6.61,
+        8.81,
+        11.01,
+        13.295,
+        15.579999999999998,
+        17.865,
+        20.15,
+        22.555
+      ],
+      "yaxis": "y",
+      "type": "scatter"
+    },
+    {
+      "hovertemplate": "vehicle_id=f1.121<br>timestep_time=%{x}<br>vehicle_x=%{y}<extra></extra>",
+      "legendgroup": "f1.121",
+      "line": {
+        "color": "#EF553B",
+        "dash": "solid",
+        "width": 2
+      },
+      "marker": {
+        "symbol": "circle",
+        "size": 5
+      },
+      "mode": "markers+lines",
+      "name": "f1.121",
+      "orientation": "v",
+      "showlegend": true,
+      "x": [
+        298.0,
+        298.25,
+        298.5,
+        298.75,
+        299.0,
+        299.25,
+        299.5,
+        299.75,
+        300.0,
+        300.25
+      ],
+      "xaxis": "x",
+      "y": [
+        1.01,
+        3.455,
+        5.8999999999999995,
+        8.344999999999999,
+        10.79,
+        13.049999999999999,
+        15.309999999999999,
+        17.57,
+        19.83,
+        22.0825
+      ],
+      "yaxis": "y",
+      "type": "scatter"
+    },
+    {
+      "hovertemplate": "vehicle_id=f1.122<br>timestep_time=%{x}<br>vehicle_x=%{y}<extra></extra>",
+      "legendgroup": "f1.122",
+      "line": {
+        "color": "#00cc96",
+        "dash": "solid",
+        "width": 2
+      },
+      "marker": {
+        "symbol": "circle",
+        "size": 5
+      },
+      "mode": "markers+lines",
+      "name": "f1.122",
+      "orientation": "v",
+      "showlegend": true,
+      "x": [
+        300.75,
+        301.0,
+        301.25,
+        301.5,
+        301.75,
+        302.0,
+        302.25,
+        302.5,
+        302.75,
+        303.0
+      ],
+      "xaxis": "x",
+      "y": [
+        0.4200000000000008,
+        2.49,
+        4.905,
+        7.32,
+        9.735,
+        12.15,
+        14.6475,
+        17.145,
+        19.6425,
+        22.14
+      ],
+      "yaxis": "y",
+      "type": "scatter"
+    },
+    {
+      "hovertemplate": "vehicle_id=f1.123<br>timestep_time=%{x}<br>vehicle_x=%{y}<extra></extra>",
+      "legendgroup": "f1.123",
+      "line": {
+        "color": "#ab63fa",
+        "dash": "solid",
+        "width": 2
+      },
+      "marker": {
+        "symbol": "circle",
+        "size": 5
+      },
+      "mode": "markers+lines",
+      "name": "f1.123",
+      "orientation": "v",
+      "showlegend": true,
+      "x": [
+        303.0,
+        303.25,
+        303.5,
+        303.75,
+        304.0,
+        304.25,
+        304.5,
+        304.75,
+        305.0,
+        305.25,
+        305.5
+      ],
+      "xaxis": "x",
+      "y": [
+        1.44,
+        3.56,
+        5.68,
+        7.800000000000001,
+        9.92,
+        11.9825,
+        14.045000000000002,
+        16.1075,
+        18.17,
+        20.012500000000003,
+        21.855
+      ],
+      "yaxis": "y",
+      "type": "scatter"
+    },
+    {
+      "hovertemplate": "vehicle_id=f1.124<br>timestep_time=%{x}<br>vehicle_x=%{y}<extra></extra>",
+      "legendgroup": "f1.124",
+      "line": {
+        "color": "#FFA15A",
+        "dash": "solid",
+        "width": 2
+      },
+      "marker": {
+        "symbol": "circle",
+        "size": 5
+      },
+      "mode": "markers+lines",
+      "name": "f1.124",
+      "orientation": "v",
+      "showlegend": true,
+      "x": [
+        305.0,
+        305.25,
+        305.5,
+        305.75,
+        306.0,
+        306.25,
+        306.5,
+        306.75,
+        307.0,
+        307.25,
+        307.5
+      ],
+      "xaxis": "x",
+      "y": [
+        0.91,
+        2.5625,
+        4.215,
+        5.8675,
+        7.52,
+        9.2,
+        10.879999999999999,
+        12.56,
+        14.24,
+        16.165,
+        18.09
+      ],
+      "yaxis": "y",
+      "type": "scatter"
+    },
+    {
+      "hovertemplate": "vehicle_id=f1.125<br>timestep_time=%{x}<br>vehicle_x=%{y}<extra></extra>",
+      "legendgroup": "f1.125",
+      "line": {
+        "color": "#19d3f3",
+        "dash": "solid",
+        "width": 2
+      },
+      "marker": {
+        "symbol": "circle",
+        "size": 5
+      },
+      "mode": "markers+lines",
+      "name": "f1.125",
+      "orientation": "v",
+      "showlegend": true,
+      "x": [
+        308.0,
+        308.25,
+        308.5,
+        308.75,
+        309.0
+      ],
+      "xaxis": "x",
+      "y": [
+        2.23,
+        4.7275,
+        7.225,
+        9.7225,
+        12.22
+      ],
+      "yaxis": "y",
+      "type": "scatter"
+    },
+    {
+      "hovertemplate": "vehicle_id=f1.126<br>timestep_time=%{x}<br>vehicle_x=%{y}<extra></extra>",
+      "legendgroup": "f1.126",
+      "line": {
+        "color": "#FF6692",
+        "dash": "solid",
+        "width": 2
+      },
+      "marker": {
+        "symbol": "circle",
+        "size": 5
+      },
+      "mode": "markers+lines",
+      "name": "f1.126",
+      "orientation": "v",
+      "showlegend": true,
+      "x": [
+        310.0,
+        310.25,
+        310.5
+      ],
+      "xaxis": "x",
+      "y": [
+        1.18,
+        3.4375,
+        5.695
+      ],
+      "yaxis": "y",
+      "type": "scatter"
+    },
+    {
+      "hovertemplate": "vehicle_id=test3<br>timestep_time=%{x}<br>vehicle_x=%{y}<extra></extra>",
+      "legendgroup": "test3",
+      "line": {
+        "color": "#ff0000",
+        "dash": "longdashdot",
+        "width": 2
+      },
+      "marker": {
+        "size": 5,
+        "symbol": "circle"
+      },
+      "mode": "markers+lines",
+      "name": "test3",
+      "orientation": "v",
+      "showlegend": true,
+      "x": [
+        280.0,
+        280.25,
+        280.5,
+        280.75,
+        281.0,
+        281.25,
+        281.5,
+        281.75,
+        282.0,
+        282.25,
+        282.5,
+        282.75,
+        283.0,
+        283.25,
+        283.5,
+        283.75,
+        284.0,
+        284.25,
+        284.5,
+        284.75,
+        285.0,
+        285.25,
+        285.5,
+        285.75,
+        286.0,
+        286.25,
+        286.5,
+        286.75,
+        287.0,
+        287.25,
+        287.5,
+        287.75,
+        288.0,
+        288.25,
+        288.5,
+        288.75,
+        289.0,
+        289.25,
+        289.5,
+        289.75,
+        290.0,
+        290.25,
+        290.5,
+        290.75,
+        291.0,
+        291.25,
+        291.5,
+        291.75,
+        292.0,
+        292.25,
+        292.5,
+        292.75,
+        293.0,
+        293.25,
+        293.5,
+        293.75,
+        294.0,
+        294.25,
+        294.5,
+        294.75,
+        295.0,
+        295.25,
+        295.5,
+        295.75,
+        296.0,
+        296.25,
+        296.5,
+        296.75,
+        297.0,
+        297.25,
+        297.5,
+        297.75,
+        298.0,
+        298.25,
+        298.5,
+        298.75,
+        299.0,
+        299.25,
+        299.5,
+        299.75,
+        300.0,
+        300.25,
+        300.5,
+        300.75,
+        301.0,
+        301.25,
+        301.5,
+        301.75,
+        302.0,
+        302.25,
+        302.5,
+        302.75,
+        303.0,
+        303.25,
+        303.5,
+        303.75,
+        304.0,
+        304.25,
+        304.5,
+        304.75,
+        305.0,
+        305.25,
+        305.5,
+        305.75,
+        306.0,
+        306.25,
+        306.5,
+        306.75,
+        307.0,
+        307.25,
+        307.5,
+        307.75,
+        308.0,
+        308.25,
+        308.5,
+        308.75,
+        309.0,
+        309.25,
+        309.5,
+        309.75,
+        310.0,
+        310.25,
+        310.5,
+        310.75,
+        311.0,
+        311.25,
+        311.5,
+        311.75,
+        312.0,
+        312.25,
+        312.5,
+        312.75,
+        313.0,
+        313.25,
+        313.5,
+        313.75,
+        314.0
+      ],
+      "xaxis": "x",
+      "y": [
+        93.37,
+        91.135,
+        88.9,
+        86.665,
+        84.43,
+        82.0,
+        79.57,
+        77.14,
+        74.71,
+        72.28,
+        69.85,
+        67.41999999999999,
+        64.99,
+        62.512499999999996,
+        60.035,
+        57.5575,
+        55.08,
+        53.394999999999996,
+        51.71,
+        50.025000000000006,
+        48.34,
+        46.597500000000004,
+        44.855000000000004,
+        43.1125,
+        41.37,
+        40.235,
+        39.099999999999994,
+        37.964999999999996,
+        36.83,
+        36.4,
+        35.97,
+        35.54,
+        35.11,
+        34.95,
+        34.79,
+        34.629999999999995,
+        34.47,
+        34.405,
+        34.34,
+        34.275,
+        34.21,
+        34.17,
+        34.129999999999995,
+        34.089999999999996,
+        34.05,
+        34.0175,
+        33.985,
+        33.9525,
+        33.92,
+        33.9075,
+        33.894999999999996,
+        33.8825,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.87,
+        33.7475,
+        33.625,
+        33.5025,
+        33.38,
+        33.0825,
+        32.785,
+        32.4875,
+        32.19,
+        31.697499999999998,
+        31.205,
+        30.7125,
+        30.22,
+        29.544999999999998,
+        28.869999999999997,
+        28.195,
+        27.52,
+        26.73,
+        25.939999999999998,
+        25.15,
+        24.36,
+        23.432499999999997,
+        22.505,
+        21.5775,
+        20.65,
+        19.575,
+        18.5,
+        17.425,
+        16.35,
+        15.1125,
+        13.875,
+        12.637500000000001,
+        11.4,
+        10.05,
+        8.7,
+        7.35,
+        6.0,
+        4.505,
+        3.01,
+        1.5149999999999997,
+        0.02
+      ],
+      "yaxis": "y",
+      "type": "scatter"
+    }
+  ],
+  "layout": {
+    "template": {
+      "data": {
+        "histogram2dcontour": [
+          {
+            "type": "histogram2dcontour",
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ]
+          }
+        ],
+        "choropleth": [
+          {
+            "type": "choropleth",
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            }
+          }
+        ],
+        "histogram2d": [
+          {
+            "type": "histogram2d",
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ]
+          }
+        ],
+        "heatmap": [
+          {
+            "type": "heatmap",
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ]
+          }
+        ],
+        "heatmapgl": [
+          {
+            "type": "heatmapgl",
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ]
+          }
+        ],
+        "contourcarpet": [
+          {
+            "type": "contourcarpet",
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            }
+          }
+        ],
+        "contour": [
+          {
+            "type": "contour",
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ]
+          }
+        ],
+        "surface": [
+          {
+            "type": "surface",
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ]
+          }
+        ],
+        "mesh3d": [
+          {
+            "type": "mesh3d",
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            }
+          }
+        ],
+        "scatter": [
+          {
+            "fillpattern": {
+              "fillmode": "overlay",
+              "size": 10,
+              "solidity": 0.2
+            },
+            "type": "scatter"
+          }
+        ],
+        "parcoords": [
+          {
+            "type": "parcoords",
+            "line": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            }
+          }
+        ],
+        "scatterpolargl": [
+          {
+            "type": "scatterpolargl",
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            }
+          }
+        ],
+        "bar": [
+          {
+            "error_x": {
+              "color": "#2a3f5f"
+            },
+            "error_y": {
+              "color": "#2a3f5f"
+            },
+            "marker": {
+              "line": {
+                "color": "#E5ECF6",
+                "width": 0.5
+              },
+              "pattern": {
+                "fillmode": "overlay",
+                "size": 10,
+                "solidity": 0.2
+              }
+            },
+            "type": "bar"
+          }
+        ],
+        "scattergeo": [
+          {
+            "type": "scattergeo",
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            }
+          }
+        ],
+        "scatterpolar": [
+          {
+            "type": "scatterpolar",
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            }
+          }
+        ],
+        "histogram": [
+          {
+            "marker": {
+              "pattern": {
+                "fillmode": "overlay",
+                "size": 10,
+                "solidity": 0.2
+              }
+            },
+            "type": "histogram"
+          }
+        ],
+        "scattergl": [
+          {
+            "type": "scattergl",
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            }
+          }
+        ],
+        "scatter3d": [
+          {
+            "type": "scatter3d",
+            "line": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            }
+          }
+        ],
+        "scattermapbox": [
+          {
+            "type": "scattermapbox",
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            }
+          }
+        ],
+        "scatterternary": [
+          {
+            "type": "scatterternary",
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            }
+          }
+        ],
+        "scattercarpet": [
+          {
+            "type": "scattercarpet",
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            }
+          }
+        ],
+        "carpet": [
+          {
+            "aaxis": {
+              "endlinecolor": "#2a3f5f",
+              "gridcolor": "white",
+              "linecolor": "white",
+              "minorgridcolor": "white",
+              "startlinecolor": "#2a3f5f"
+            },
+            "baxis": {
+              "endlinecolor": "#2a3f5f",
+              "gridcolor": "white",
+              "linecolor": "white",
+              "minorgridcolor": "white",
+              "startlinecolor": "#2a3f5f"
+            },
+            "type": "carpet"
+          }
+        ],
+        "table": [
+          {
+            "cells": {
+              "fill": {
+                "color": "#EBF0F8"
+              },
+              "line": {
+                "color": "white"
+              }
+            },
+            "header": {
+              "fill": {
+                "color": "#C8D4E3"
+              },
+              "line": {
+                "color": "white"
+              }
+            },
+            "type": "table"
+          }
+        ],
+        "barpolar": [
+          {
+            "marker": {
+              "line": {
+                "color": "#E5ECF6",
+                "width": 0.5
+              },
+              "pattern": {
+                "fillmode": "overlay",
+                "size": 10,
+                "solidity": 0.2
+              }
+            },
+            "type": "barpolar"
+          }
+        ],
+        "pie": [
+          {
+            "automargin": true,
+            "type": "pie"
+          }
+        ]
+      },
+      "layout": {
+        "autotypenumbers": "strict",
+        "colorway": [
+          "#636efa",
+          "#EF553B",
+          "#00cc96",
+          "#ab63fa",
+          "#FFA15A",
+          "#19d3f3",
+          "#FF6692",
+          "#B6E880",
+          "#FF97FF",
+          "#FECB52"
+        ],
+        "font": {
+          "color": "#2a3f5f"
+        },
+        "hovermode": "closest",
+        "hoverlabel": {
+          "align": "left"
+        },
+        "paper_bgcolor": "white",
+        "plot_bgcolor": "#E5ECF6",
+        "polar": {
+          "bgcolor": "#E5ECF6",
+          "angularaxis": {
+            "gridcolor": "white",
+            "linecolor": "white",
+            "ticks": ""
+          },
+          "radialaxis": {
+            "gridcolor": "white",
+            "linecolor": "white",
+            "ticks": ""
+          }
+        },
+        "ternary": {
+          "bgcolor": "#E5ECF6",
+          "aaxis": {
+            "gridcolor": "white",
+            "linecolor": "white",
+            "ticks": ""
+          },
+          "baxis": {
+            "gridcolor": "white",
+            "linecolor": "white",
+            "ticks": ""
+          },
+          "caxis": {
+            "gridcolor": "white",
+            "linecolor": "white",
+            "ticks": ""
+          }
+        },
+        "coloraxis": {
+          "colorbar": {
+            "outlinewidth": 0,
+            "ticks": ""
+          }
+        },
+        "colorscale": {
+          "sequential": [
+            [
+              0.0,
+              "#0d0887"
+            ],
+            [
+              0.1111111111111111,
+              "#46039f"
+            ],
+            [
+              0.2222222222222222,
+              "#7201a8"
+            ],
+            [
+              0.3333333333333333,
+              "#9c179e"
+            ],
+            [
+              0.4444444444444444,
+              "#bd3786"
+            ],
+            [
+              0.5555555555555556,
+              "#d8576b"
+            ],
+            [
+              0.6666666666666666,
+              "#ed7953"
+            ],
+            [
+              0.7777777777777778,
+              "#fb9f3a"
+            ],
+            [
+              0.8888888888888888,
+              "#fdca26"
+            ],
+            [
+              1.0,
+              "#f0f921"
+            ]
+          ],
+          "sequentialminus": [
+            [
+              0.0,
+              "#0d0887"
+            ],
+            [
+              0.1111111111111111,
+              "#46039f"
+            ],
+            [
+              0.2222222222222222,
+              "#7201a8"
+            ],
+            [
+              0.3333333333333333,
+              "#9c179e"
+            ],
+            [
+              0.4444444444444444,
+              "#bd3786"
+            ],
+            [
+              0.5555555555555556,
+              "#d8576b"
+            ],
+            [
+              0.6666666666666666,
+              "#ed7953"
+            ],
+            [
+              0.7777777777777778,
+              "#fb9f3a"
+            ],
+            [
+              0.8888888888888888,
+              "#fdca26"
+            ],
+            [
+              1.0,
+              "#f0f921"
+            ]
+          ],
+          "diverging": [
+            [
+              0,
+              "#8e0152"
+            ],
+            [
+              0.1,
+              "#c51b7d"
+            ],
+            [
+              0.2,
+              "#de77ae"
+            ],
+            [
+              0.3,
+              "#f1b6da"
+            ],
+            [
+              0.4,
+              "#fde0ef"
+            ],
+            [
+              0.5,
+              "#f7f7f7"
+            ],
+            [
+              0.6,
+              "#e6f5d0"
+            ],
+            [
+              0.7,
+              "#b8e186"
+            ],
+            [
+              0.8,
+              "#7fbc41"
+            ],
+            [
+              0.9,
+              "#4d9221"
+            ],
+            [
+              1,
+              "#276419"
+            ]
+          ]
+        },
+        "xaxis": {
+          "gridcolor": "white",
+          "linecolor": "white",
+          "ticks": "",
+          "title": {
+            "standoff": 15
+          },
+          "zerolinecolor": "white",
+          "automargin": true,
+          "zerolinewidth": 2
+        },
+        "yaxis": {
+          "gridcolor": "white",
+          "linecolor": "white",
+          "ticks": "",
+          "title": {
+            "standoff": 15
+          },
+          "zerolinecolor": "white",
+          "automargin": true,
+          "zerolinewidth": 2
+        },
+        "scene": {
+          "xaxis": {
+            "backgroundcolor": "#E5ECF6",
+            "gridcolor": "white",
+            "linecolor": "white",
+            "showbackground": true,
+            "ticks": "",
+            "zerolinecolor": "white",
+            "gridwidth": 2
+          },
+          "yaxis": {
+            "backgroundcolor": "#E5ECF6",
+            "gridcolor": "white",
+            "linecolor": "white",
+            "showbackground": true,
+            "ticks": "",
+            "zerolinecolor": "white",
+            "gridwidth": 2
+          },
+          "zaxis": {
+            "backgroundcolor": "#E5ECF6",
+            "gridcolor": "white",
+            "linecolor": "white",
+            "showbackground": true,
+            "ticks": "",
+            "zerolinecolor": "white",
+            "gridwidth": 2
+          }
+        },
+        "shapedefaults": {
+          "line": {
+            "color": "#2a3f5f"
+          }
+        },
+        "annotationdefaults": {
+          "arrowcolor": "#2a3f5f",
+          "arrowhead": 0,
+          "arrowwidth": 1
+        },
+        "geo": {
+          "bgcolor": "white",
+          "landcolor": "#E5ECF6",
+          "subunitcolor": "white",
+          "showland": true,
+          "showlakes": true,
+          "lakecolor": "white"
+        },
+        "title": {
+          "x": 0.05
+        },
+        "mapbox": {
+          "style": "light"
+        }
+      }
+    },
+    "xaxis": {
+      "anchor": "y",
+      "domain": [
+        0.0,
+        1.0
+      ],
+      "title": {
+        "text": "Time [sec]"
+      },
+      "showgrid": false
+    },
+    "yaxis": {
+      "anchor": "x",
+      "domain": [
+        0.0,
+        1.0
+      ],
+      "title": {
+        "text": "Space [m]"
+      },
+      "showgrid": false,
+      "range": [
+        -1,
+        101
+      ]
+    },
+    "legend": {
+      "title": {
+        "text": "vehicle_id"
+      },
+      "tracegroupgap": 0
+    },
+    "margin": {
+      "t": 40,
+      "r": 10,
+      "l": 10,
+      "b": 0
+    },
+    "shapes": [
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "T-280.0",
+        "type": "line",
+        "x0": 280.0,
+        "x1": 280.0,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "T-282.0",
+        "type": "line",
+        "x0": 282.0,
+        "x1": 282.0,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "T-284.0",
+        "type": "line",
+        "x0": 284.0,
+        "x1": 284.0,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "T-286.0",
+        "type": "line",
+        "x0": 286.0,
+        "x1": 286.0,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "T-288.0",
+        "type": "line",
+        "x0": 288.0,
+        "x1": 288.0,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "T-290.0",
+        "type": "line",
+        "x0": 290.0,
+        "x1": 290.0,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "T-292.0",
+        "type": "line",
+        "x0": 292.0,
+        "x1": 292.0,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "T-294.0",
+        "type": "line",
+        "x0": 294.0,
+        "x1": 294.0,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "T-296.0",
+        "type": "line",
+        "x0": 296.0,
+        "x1": 296.0,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "T-298.0",
+        "type": "line",
+        "x0": 298.0,
+        "x1": 298.0,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "T-300.0",
+        "type": "line",
+        "x0": 300.0,
+        "x1": 300.0,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "T-302.0",
+        "type": "line",
+        "x0": 302.0,
+        "x1": 302.0,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "T-304.0",
+        "type": "line",
+        "x0": 304.0,
+        "x1": 304.0,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "T-306.0",
+        "type": "line",
+        "x0": 306.0,
+        "x1": 306.0,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "T-308.0",
+        "type": "line",
+        "x0": 308.0,
+        "x1": 308.0,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "T-310.0",
+        "type": "line",
+        "x0": 310.0,
+        "x1": 310.0,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "T-312.0",
+        "type": "line",
+        "x0": 312.0,
+        "x1": 312.0,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "T-314.0",
+        "type": "line",
+        "x0": 314.0,
+        "x1": 314.0,
+        "xref": "x",
+        "y0": 0,
+        "y1": 1,
+        "yref": "y domain"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "X--20.0",
+        "type": "line",
+        "x0": 0,
+        "x1": 1,
+        "xref": "x domain",
+        "y0": -20.0,
+        "y1": -20.0,
+        "yref": "y"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "X-0.0",
+        "type": "line",
+        "x0": 0,
+        "x1": 1,
+        "xref": "x domain",
+        "y0": 0.0,
+        "y1": 0.0,
+        "yref": "y"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "X-20.0",
+        "type": "line",
+        "x0": 0,
+        "x1": 1,
+        "xref": "x domain",
+        "y0": 20.0,
+        "y1": 20.0,
+        "yref": "y"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "X-40.0",
+        "type": "line",
+        "x0": 0,
+        "x1": 1,
+        "xref": "x domain",
+        "y0": 40.0,
+        "y1": 40.0,
+        "yref": "y"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "X-60.0",
+        "type": "line",
+        "x0": 0,
+        "x1": 1,
+        "xref": "x domain",
+        "y0": 60.0,
+        "y1": 60.0,
+        "yref": "y"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "X-80.0",
+        "type": "line",
+        "x0": 0,
+        "x1": 1,
+        "xref": "x domain",
+        "y0": 80.0,
+        "y1": 80.0,
+        "yref": "y"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "X-100.0",
+        "type": "line",
+        "x0": 0,
+        "x1": 1,
+        "xref": "x domain",
+        "y0": 100.0,
+        "y1": 100.0,
+        "yref": "y"
+      },
+      {
+        "line": {
+          "color": "grey",
+          "dash": "dash",
+          "width": 0.5
+        },
+        "name": "X-120.0",
+        "type": "line",
+        "x0": 0,
+        "x1": 1,
+        "xref": "x domain",
+        "y0": 120.0,
+        "y1": 120.0,
+        "yref": "y"
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 279.875,
+        "x1": 280.125,
+        "y0": 33.370000000000005,
+        "y1": 83.37
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 280.125,
+        "x1": 280.375,
+        "y0": 31.135000000000005,
+        "y1": 81.135
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 280.375,
+        "x1": 280.625,
+        "y0": 28.900000000000006,
+        "y1": 78.9
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 280.625,
+        "x1": 280.875,
+        "y0": 26.665000000000006,
+        "y1": 76.665
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 280.875,
+        "x1": 281.125,
+        "y0": 24.430000000000007,
+        "y1": 74.43
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 281.125,
+        "x1": 281.375,
+        "y0": 22.0,
+        "y1": 72.0
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 281.375,
+        "x1": 281.625,
+        "y0": 19.569999999999993,
+        "y1": 69.57
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 281.625,
+        "x1": 281.875,
+        "y0": 17.14,
+        "y1": 67.14
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 281.875,
+        "x1": 282.125,
+        "y0": 14.709999999999994,
+        "y1": 64.71
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 282.125,
+        "x1": 282.375,
+        "y0": 12.280000000000001,
+        "y1": 62.28
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 282.375,
+        "x1": 282.625,
+        "y0": 9.849999999999994,
+        "y1": 59.849999999999994
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 282.625,
+        "x1": 282.875,
+        "y0": 7.4199999999999875,
+        "y1": 57.41999999999999
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 282.875,
+        "x1": 283.125,
+        "y0": 4.989999999999995,
+        "y1": 54.989999999999995
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 283.125,
+        "x1": 283.375,
+        "y0": 2.5124999999999957,
+        "y1": 52.512499999999996
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 283.375,
+        "x1": 283.625,
+        "y0": 0.03499999999999659,
+        "y1": 50.035
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 283.625,
+        "x1": 283.875,
+        "y0": -2.4425000000000026,
+        "y1": 47.5575
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 283.875,
+        "x1": 284.125,
+        "y0": -4.920000000000002,
+        "y1": 45.08
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 284.125,
+        "x1": 284.375,
+        "y0": -6.605000000000004,
+        "y1": 43.394999999999996
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 284.375,
+        "x1": 284.625,
+        "y0": -8.29,
+        "y1": 41.71
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 284.625,
+        "x1": 284.875,
+        "y0": -9.974999999999994,
+        "y1": 40.025000000000006
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 284.875,
+        "x1": 285.125,
+        "y0": -11.659999999999997,
+        "y1": 38.34
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 285.125,
+        "x1": 285.375,
+        "y0": -13.402499999999996,
+        "y1": 36.597500000000004
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 285.375,
+        "x1": 285.625,
+        "y0": -15.144999999999996,
+        "y1": 34.855000000000004
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 285.625,
+        "x1": 285.875,
+        "y0": -16.887500000000003,
+        "y1": 33.1125
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 285.875,
+        "x1": 286.125,
+        "y0": -18.630000000000003,
+        "y1": 31.369999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 286.125,
+        "x1": 286.375,
+        "y0": -19.765,
+        "y1": 30.235
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 286.375,
+        "x1": 286.625,
+        "y0": -20.900000000000006,
+        "y1": 29.099999999999994
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 286.625,
+        "x1": 286.875,
+        "y0": -22.035000000000004,
+        "y1": 27.964999999999996
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 286.875,
+        "x1": 287.125,
+        "y0": -23.17,
+        "y1": 26.83
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 287.125,
+        "x1": 287.375,
+        "y0": -23.6,
+        "y1": 26.4
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 287.375,
+        "x1": 287.625,
+        "y0": -24.03,
+        "y1": 25.97
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 287.625,
+        "x1": 287.875,
+        "y0": -24.46,
+        "y1": 25.54
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 287.875,
+        "x1": 288.125,
+        "y0": -24.89,
+        "y1": 25.11
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 288.125,
+        "x1": 288.375,
+        "y0": -25.049999999999997,
+        "y1": 24.950000000000003
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 288.375,
+        "x1": 288.625,
+        "y0": -25.21,
+        "y1": 24.79
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 288.625,
+        "x1": 288.875,
+        "y0": -25.370000000000005,
+        "y1": 24.629999999999995
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 288.875,
+        "x1": 289.125,
+        "y0": -25.53,
+        "y1": 24.47
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 289.125,
+        "x1": 289.375,
+        "y0": -25.595,
+        "y1": 24.405
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 289.375,
+        "x1": 289.625,
+        "y0": -25.659999999999997,
+        "y1": 24.340000000000003
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 289.625,
+        "x1": 289.875,
+        "y0": -25.725,
+        "y1": 24.275
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 289.875,
+        "x1": 290.125,
+        "y0": -25.79,
+        "y1": 24.21
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 290.125,
+        "x1": 290.375,
+        "y0": -25.83,
+        "y1": 24.17
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 290.375,
+        "x1": 290.625,
+        "y0": -25.870000000000005,
+        "y1": 24.129999999999995
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 290.625,
+        "x1": 290.875,
+        "y0": -25.910000000000004,
+        "y1": 24.089999999999996
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 290.875,
+        "x1": 291.125,
+        "y0": -25.950000000000003,
+        "y1": 24.049999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 291.125,
+        "x1": 291.375,
+        "y0": -25.9825,
+        "y1": 24.0175
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 291.375,
+        "x1": 291.625,
+        "y0": -26.015,
+        "y1": 23.985
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 291.625,
+        "x1": 291.875,
+        "y0": -26.0475,
+        "y1": 23.9525
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 291.875,
+        "x1": 292.125,
+        "y0": -26.08,
+        "y1": 23.92
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 292.125,
+        "x1": 292.375,
+        "y0": -26.0925,
+        "y1": 23.9075
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 292.375,
+        "x1": 292.625,
+        "y0": -26.105000000000004,
+        "y1": 23.894999999999996
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 292.625,
+        "x1": 292.875,
+        "y0": -26.1175,
+        "y1": 23.8825
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 292.875,
+        "x1": 293.125,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 293.125,
+        "x1": 293.375,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 293.375,
+        "x1": 293.625,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 293.625,
+        "x1": 293.875,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 293.875,
+        "x1": 294.125,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 294.125,
+        "x1": 294.375,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 294.375,
+        "x1": 294.625,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 294.625,
+        "x1": 294.875,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 294.875,
+        "x1": 295.125,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 295.125,
+        "x1": 295.375,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 295.375,
+        "x1": 295.625,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 295.625,
+        "x1": 295.875,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 295.875,
+        "x1": 296.125,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 296.125,
+        "x1": 296.375,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 296.375,
+        "x1": 296.625,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 296.625,
+        "x1": 296.875,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 296.875,
+        "x1": 297.125,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 297.125,
+        "x1": 297.375,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 297.375,
+        "x1": 297.625,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 297.625,
+        "x1": 297.875,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 297.875,
+        "x1": 298.125,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 298.125,
+        "x1": 298.375,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 298.375,
+        "x1": 298.625,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 298.625,
+        "x1": 298.875,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 298.875,
+        "x1": 299.125,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 299.125,
+        "x1": 299.375,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 299.375,
+        "x1": 299.625,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 299.625,
+        "x1": 299.875,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 299.875,
+        "x1": 300.125,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 300.125,
+        "x1": 300.375,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 300.375,
+        "x1": 300.625,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 300.625,
+        "x1": 300.875,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 300.875,
+        "x1": 301.125,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 301.125,
+        "x1": 301.375,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 301.375,
+        "x1": 301.625,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 301.625,
+        "x1": 301.875,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 301.875,
+        "x1": 302.125,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 302.125,
+        "x1": 302.375,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 302.375,
+        "x1": 302.625,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 302.625,
+        "x1": 302.875,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 302.875,
+        "x1": 303.125,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 303.125,
+        "x1": 303.375,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 303.375,
+        "x1": 303.625,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 303.625,
+        "x1": 303.875,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 303.875,
+        "x1": 304.125,
+        "y0": -26.130000000000003,
+        "y1": 23.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 304.125,
+        "x1": 304.375,
+        "y0": -26.252499999999998,
+        "y1": 23.747500000000002
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 304.375,
+        "x1": 304.625,
+        "y0": -26.375,
+        "y1": 23.625
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 304.625,
+        "x1": 304.875,
+        "y0": -26.497500000000002,
+        "y1": 23.502499999999998
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 304.875,
+        "x1": 305.125,
+        "y0": -26.619999999999997,
+        "y1": 23.380000000000003
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 305.125,
+        "x1": 305.375,
+        "y0": -26.917499999999997,
+        "y1": 23.082500000000003
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 305.375,
+        "x1": 305.625,
+        "y0": -27.215000000000003,
+        "y1": 22.784999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 305.625,
+        "x1": 305.875,
+        "y0": -27.512500000000003,
+        "y1": 22.487499999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 305.875,
+        "x1": 306.125,
+        "y0": -27.810000000000002,
+        "y1": 22.189999999999998
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 306.125,
+        "x1": 306.375,
+        "y0": -28.302500000000002,
+        "y1": 21.697499999999998
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 306.375,
+        "x1": 306.625,
+        "y0": -28.795,
+        "y1": 21.205
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 306.625,
+        "x1": 306.875,
+        "y0": -29.2875,
+        "y1": 20.7125
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 306.875,
+        "x1": 307.125,
+        "y0": -29.78,
+        "y1": 20.22
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 307.125,
+        "x1": 307.375,
+        "y0": -30.455000000000002,
+        "y1": 19.544999999999998
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 307.375,
+        "x1": 307.625,
+        "y0": -31.130000000000003,
+        "y1": 18.869999999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 307.625,
+        "x1": 307.875,
+        "y0": -31.805,
+        "y1": 18.195
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 307.875,
+        "x1": 308.125,
+        "y0": -32.480000000000004,
+        "y1": 17.52
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 308.125,
+        "x1": 308.375,
+        "y0": -33.269999999999996,
+        "y1": 16.73
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 308.375,
+        "x1": 308.625,
+        "y0": -34.06,
+        "y1": 15.939999999999998
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 308.625,
+        "x1": 308.875,
+        "y0": -34.85,
+        "y1": 15.149999999999999
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 308.875,
+        "x1": 309.125,
+        "y0": -35.64,
+        "y1": 14.36
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 309.125,
+        "x1": 309.375,
+        "y0": -36.5675,
+        "y1": 13.432499999999997
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 309.375,
+        "x1": 309.625,
+        "y0": -37.495000000000005,
+        "y1": 12.504999999999999
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 309.625,
+        "x1": 309.875,
+        "y0": -38.4225,
+        "y1": 11.5775
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 309.875,
+        "x1": 310.125,
+        "y0": -39.35,
+        "y1": 10.649999999999999
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 310.125,
+        "x1": 310.375,
+        "y0": -40.425,
+        "y1": 9.575
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 310.375,
+        "x1": 310.625,
+        "y0": -41.5,
+        "y1": 8.5
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 310.625,
+        "x1": 310.875,
+        "y0": -42.575,
+        "y1": 7.425000000000001
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 310.875,
+        "x1": 311.125,
+        "y0": -43.65,
+        "y1": 6.350000000000001
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 311.125,
+        "x1": 311.375,
+        "y0": -44.8875,
+        "y1": 5.112500000000001
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 311.375,
+        "x1": 311.625,
+        "y0": -46.125,
+        "y1": 3.875
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 311.625,
+        "x1": 311.875,
+        "y0": -47.3625,
+        "y1": 2.637500000000001
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 311.875,
+        "x1": 312.125,
+        "y0": -48.6,
+        "y1": 1.4000000000000004
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 312.125,
+        "x1": 312.375,
+        "y0": -49.95,
+        "y1": 0.05000000000000071
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 312.375,
+        "x1": 312.625,
+        "y0": -51.3,
+        "y1": -1.3000000000000007
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 312.625,
+        "x1": 312.875,
+        "y0": -52.65,
+        "y1": -2.6500000000000004
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 312.875,
+        "x1": 313.125,
+        "y0": -54.0,
+        "y1": -4.0
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 313.125,
+        "x1": 313.375,
+        "y0": -55.495,
+        "y1": -5.495
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 313.375,
+        "x1": 313.625,
+        "y0": -56.99,
+        "y1": -6.99
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 313.625,
+        "x1": 313.875,
+        "y0": -58.485,
+        "y1": -8.485
+      },
+      {
+        "fillcolor": "Red",
+        "line": {
+          "color": "Red",
+          "width": 0.1
+        },
+        "opacity": 0.1,
+        "type": "rect",
+        "x0": 313.875,
+        "x1": 314.125,
+        "y0": -59.98,
+        "y1": -9.98
+      }
+    ],
+    "title": {
+      "text": "Partial Simulated Data within Camera View",
+      "x": 0.5
+    },
+    "paper_bgcolor": "rgba(0,0,0,0)",
+    "plot_bgcolor": "rgba(0,0,0,0)"
+  }
+}
