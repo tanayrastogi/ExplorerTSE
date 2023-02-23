@@ -224,7 +224,7 @@ def plot_aggregated_density_matrix(matrix, title, verbose=False)->go.Figure:
     return fig
 
 
-def plot_fitness(repetation:int, num_generations:int, generation_fitness)->go.Figure:
+def plot_fitness(repetation:int, num_generations:int, generation_fitness, max_fitness_value:float)->go.Figure:
     fig = go.Figure()
     for itr in range(repetation):
         fig.add_trace(go.Scatter(x=list(range(num_generations)), y=list(generation_fitness[:, itr]),
@@ -236,8 +236,10 @@ def plot_fitness(repetation:int, num_generations:int, generation_fitness)->go.Fi
                                 mode="lines",
                                 name="Mean-Fit",
                                 line = dict(color='firebrick', width=4, dash='dot')))
+    fig.add_hline(y=max_fitness_value,
+                  line_width=3, line_dash="dash", line_color="green")
     fig.update_xaxes(title_text='Generations')
-    fig.update_yaxes(title_text='Fitness')
+    fig.update_yaxes(title_text='(-)RMSE on Partial Data', range=[-0.05, 0])
     fig.update_layout(title="Fitness vs Generation for {} Repetitions".format(repetation),
                       title_x=0.5, margin={"r":10,"t":40,"l":10,"b":0}, paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
 
@@ -247,7 +249,7 @@ def plot_resiual_matrix(actual, predicted):
      ## Difference in the real and model values
     residuals = np.abs(actual.values - predicted.values).astype(float)
     fig = go.Figure()
-    fig.add_trace(go.Heatmap(
+    fig = go.Figure(data=go.Heatmap(
                             x=[str(idx) for idx in predicted.columns],
                             y=[str(idx) for idx in predicted.index],
                             xgap=2,
@@ -493,7 +495,7 @@ def plot_fundamental_diagram(plotdata: pd.DataFrame,
                                             line=dict(color="Black", width=1),
                                             color=scn,
                                             colorscale="Rainbow"),
-                                customdata = data['SimulationFolder'],
+                                customdata = data['SCN'],
                                 hovertemplate='<b>%{customdata}</b><br><br> X: %{x:.3f} <br> Y: %{y:.3f} <extra></extra>',
                                 name=uniques[scn]
                             ))
@@ -519,7 +521,8 @@ def plot_fundamental_diagram(plotdata: pd.DataFrame,
                     showline=True, linewidth=2, linecolor='black', mirror=True)
     fig.update_yaxes(title_text=Y_title,
                     showline=True, linewidth=2, linecolor='black', mirror=True)
-    fig.update_layout(title=plotTitle, title_x=0.5, margin={"r":10,"t":40,"l":10,"b":0}, paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
+    fig.update_layout(title=plotTitle, title_x=0.5, margin={"r":10,"t":40,"l":10,"b":0}, #paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)'
+    )
     return fig
 
 
@@ -543,7 +546,7 @@ def init_rmse_plot():
     # fig.add_vrect(x0=128, x1=147, annotation_text="Scenario-8", annotation_position="top left",
     #               fillcolor="yellowgreen", opacity=0.05, line_width=0)
     fig.update_xaxes(title_text="Experiment", showline=True, linewidth=2, linecolor='black', mirror=True)
-    fig.update_yaxes(title_text="RMSE", showline=True, linewidth=2, linecolor='black', mirror=True, range=[0, 0.04])
+    fig.update_yaxes(title_text="RMSE on Masked Data", showline=True, linewidth=2, linecolor='black', mirror=True, range=[0, 0.025])
     fig.update_layout(title="RMSE vs Experiment", title_x=0.5, margin={"r":10,"t":40,"l":10,"b":0}, paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
     return fig
 
@@ -749,6 +752,16 @@ def residual_plot(df):
     return fig
 
 
+
+
+
+
+
+
+import pandas as pd 
+import plotly.graph_objects as go
+import plotly.express as px
+import plotting as plt
 
 ## 3D plot for Fitness ##
 # import pandas as pd

@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import numpy as np 
 import plotting as plt
 import streamlit as st
 from st_aggrid import GridOptionsBuilder, AgGrid
@@ -13,10 +14,8 @@ SIMULATION_DATA_FOLDER = os.path.join(MAIN_FOLDER, "SimulationData")
 SIMULATION_METATDATA   = os.path.join(MAIN_FOLDER, "SimulationMetadata.csv")
 DENSITY_TUPLE_CAR      = os.path.join(MAIN_FOLDER, "densTuplecar.csv")
 DENSITY_TUPLE_PARTIAL  = os.path.join(MAIN_FOLDER, "densTuplepartial.csv")
-CTM_DATA_FOLDER = os.path.join(MAIN_FOLDER, "CTMExpResult")
-CTM_METATDATA   = os.path.join(MAIN_FOLDER, "CTMResult.csv")
-GA_DATA_FOLDER = os.path.join(MAIN_FOLDER, "GAExpResult")
-GA_METATDATA   = os.path.join(MAIN_FOLDER, "GAResult.csv")
+GA_DATA_FOLDER  = os.path.join(MAIN_FOLDER, "GAExpResult")
+GA_METATDATA    = os.path.join(MAIN_FOLDER, "GAResult.csv")
 
 def markdown(title, header='h1', color='red', showLine=True) -> None:
     if showLine:
@@ -85,6 +84,64 @@ def sumo_simulation_data() -> None:
     col = col[-2:] + col[:-2]
     data = data[col]
     selected_data = show_table(data)
+
+    ### PLOTS ####
+    import plotly.figure_factory as ff
+    col1, col2 = st.columns(2)
+    with col1: 
+        ## Car Speed and Probe Speed distribution across the experiments ##
+        hist_data = [data["Car Speed"].to_numpy(), data["Probe Speed"].to_numpy()]
+        group_labels = ['Opposite Lane Speed', 'Moving Camera Speed']
+        fig = ff.create_distplot(hist_data, group_labels, bin_size=1, show_rug=False, curve_type="kde", histnorm='probability')
+        fig.update_xaxes(title_text="Speed [m/sec]", range=[0, 10])
+        fig.update_layout(margin={"r":10,"t":40,"l":10,"b":10}, plot_bgcolor='rgba(0,0,0,0)')
+        fig.update_layout(legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        ))
+        st.plotly_chart(fig)
+
+        import plotly.express as px 
+        fig = px.scatter(data, x="Probe Speed", y="Car Speed", marginal_x="histogram", color="SCN", marginal_y="histogram", hover_data=["SimulationFolder"])
+        fig.update_xaxes(title_text="Moving Camera Speed [m/sec]",
+                        range=[0, 10], showline=True, linewidth=2, linecolor='black', mirror=True, row=1, col=1)
+        fig.update_yaxes(title_text="Avg. Traffic Speed in Opposite Lane [m/sec]",
+                        range=[0, 10], showline=True, linewidth=2, linecolor='black', mirror=True, row=1, col=1)
+        fig.update_traces(marker=dict(size=8,
+                                    line=dict(width=1,
+                                            color='DarkSlateGrey')),
+                        selector=dict(mode='markers'))
+        fig.update_layout(title="Moving Camera Speed vs Lane Traffic Speed", title_x=0.5, margin={"r":10,"t":40,"l":10,"b":10}, plot_bgcolor='rgba(0,0,0,0)')
+        fig.update_layout(legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        ))
+        st.plotly_chart(fig)
+
+    with col2: 
+        ## Car Density distribution across the experiments ##
+        hist_data = [data["Car Density"].to_numpy()]
+        group_labels = ['Opposite Lane Density']
+        fig = ff.create_distplot(hist_data, group_labels, bin_size=0.01, show_rug=False, curve_type="kde", histnorm='probability')
+        fig.update_xaxes(title_text="Avg. Traffic Density [veh/m]", range=[0, 0.15])
+        fig.update_layout(margin={"r":10,"t":40,"l":10,"b":10}, plot_bgcolor='rgba(0,0,0,0)')
+        fig.update_layout(legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        ))
+        st.plotly_chart(fig)
+
+
+
 
     for rowData in selected_data:
         scnFolder = rowData['SimulationFolder']
@@ -159,67 +216,39 @@ def fd_estimation() -> None:
             st.dataframe(df, use_container_width=True)
 ################################################################################################
 
-################################################################################################
-                                    #### CTM RESULTS ####
-################################################################################################
-def ctm_results() -> None:
-    markdown("CTM Simulation with Estimated FD parameters")
-
-    ############# DENS TUPLES ##############
-    dataType = st.radio("Type of Tuple Data", ('Partial Matrix', 'Full Matrix'))
-
-    # CTM RESULTS 
-    ctmRes = pd.read_csv(CTM_METATDATA, sep=";", header=0)
-    data = {id:frame for id, frame in ctmRes.groupby("Simulation Type")}
-
-    ## RMSE PLOT ##
-    fig = plt.init_rmse_plot()
-    for id, frame in ctmRes.groupby("Simulation Type"):
-        fig = plt.plot_rmse(fig,
-                        x_data=frame["EXP"], y_data=frame["RMSE"],
-                        name="Full Matrix" if id == "car" else "Partial Matrix")
-    st.plotly_chart(fig, use_container_width=True)
-       
-    ## RESULTS ##
-    selected_row = show_table(ctmRes)   
-    for row in selected_row: 
-        simType     = row["Simulation Type"]
-        scnFolder   = row["SimulationFolder"]
-        expFolder   = os.path.join(str(simType), str(row['EXP']))
-
-        # CTM Matirx
-        markdown(f"EXP {row['EXP']}: {scnFolder}/{simType}", header='h3', color='black', showLine=False)
-        markdown("INPUT DATA", header='h3', color='black', showLine=True)
-        col1, col2 = st.columns(2)
-        with col1:     
-            st.plotly_chart(plt.load_data('plotly', os.path.join(SIMULATION_DATA_FOLDER, scnFolder, "plot_carData_CTM_trajectory.json")),
-                            use_container_width=True)
-        with col2: 
-            st.plotly_chart(plt.load_data('plotly', os.path.join(SIMULATION_DATA_FOLDER, scnFolder, "plot_CTMMatrix.json")), 
-                            use_container_width=True)
-        markdown("SIMUALTION RESULTS", header='h3', color='black', showLine=True)
-        col1, col2 = st.columns(2)
-        with col1:     
-            markdown(f"RMSE: {row['RMSE']}", header='h5', color='black', showLine=False)
-            st.plotly_chart(plt.load_data('plotly', os.path.join(CTM_DATA_FOLDER, str(expFolder), "plot_ctm_eval_density.json")),
-                            use_container_width=True)
-        with col2: 
-            markdown(f"MAE: {row['MAE']}", header='h5', color='black', showLine=False)
-            st.plotly_chart(plt.load_data('plotly', os.path.join(CTM_DATA_FOLDER, str(expFolder), "plot_ctm_out_density.json")), 
-                            use_container_width=True)
-            st.plotly_chart(plt.load_data('plotly', os.path.join(CTM_DATA_FOLDER, str(expFolder), "plot_ctm_residual.json")), 
-                            use_container_width=True)
-    
-################################################################################################
 
 ################################################################################################
                                     #### GA RESULTS ####
 ################################################################################################
 def ga_results():
+    param_search_data = pd.read_csv("data/GAPS_gen_pop.csv", sep=";", header=0)
+    ## PLOTS ##
+    col1, col2 = st.columns(2)
+    with col1: 
+        fig = plt.go.Figure()
+        for gen, frame in param_search_data.groupby("Generation"):
+            fig.add_trace(plt.go.Scatter(x=frame["Population"], y=frame["Avg. RMSE (140 EXP)"],
+                                         name=f"NUM_GEN_{gen}"))
+        fig.update_xaxes(title_text='Population')
+        fig.update_yaxes(title_text='AVG RMSE (140 EXP)')
+        fig.update_layout(title="AVG RMSE value for different GA Params", title_x=0.5, margin={"r":10,"t":40,"l":10,"b":0}, paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
+        st.plotly_chart(fig, use_container_width=True)
+
+    with col2: 
+        fig = plt.ff.create_distplot([param_search_data["Avg. RMSE (140 EXP)"].to_list()],
+                                ["AVG. RMSE"], show_hist=False, show_rug=False)
+        fig.update_xaxes(title_text='Avg. RMSE (140 EXP)')
+        st.plotly_chart(fig, use_container_width=True)
+
+
     markdown("GA Results with FD from Partial Matrix Density Tuples")
+    markdown(f"nGen80_nPop600_nMat300_tour10_mutProb0-75", header='h3', color='black', showLine=False)
 
     # GA Results
     gaRes = pd.read_csv(GA_METATDATA, sep=";", header=0)
+    gaRes.set_index("EXP", inplace=True, drop=False)
+    gaRes.drop([48, 109], inplace=True)
+
     ## RMSE PLOT ##
     fig = plt.init_rmse_plot()
     # fig = plt.plot_rmse(fig,
@@ -239,8 +268,10 @@ def ga_results():
 
     # GA METADATA TABLE
     data = gaRes.copy()
-
-    selected_data = show_table(data)
+    data = data[["EXP", "SimulationFolder", "Scenario", "ProbeID", "RMSE (Masked)", "MAE (Masked)", "CTM RMSE (Masked)", "CTM MAE (Masked)",
+                 "RMSE (NonMaked)", "MAE (NonMaked)"]]
+    
+    selected_data = show_table(data.round(5))
     for rowData in selected_data:
         expFolder       = rowData['EXP']
         scnFolder       = rowData['SimulationFolder']
@@ -250,52 +281,114 @@ def ga_results():
             markdown("INPUT DATA", header='h3', color='black', showLine=False)
             col1, col2 = st.columns(2)
             with col1:
-                st.plotly_chart(plt.load_data('plotly', os.path.join(SIMULATION_DATA_FOLDER, str(scnFolder), "plot_carData_trajectory.json")), 
-                                use_container_width=True)
-                st.plotly_chart(plt.load_data('plotly', os.path.join(SIMULATION_DATA_FOLDER, str(scnFolder), "plot_partialData_trajectory.json")), 
-                                use_container_width=True)
+                fig = plt.load_data('plotly', os.path.join(SIMULATION_DATA_FOLDER, str(scnFolder), "plot_carData_trajectory.json"))
+                st.plotly_chart(fig, use_container_width=True)
+                fig = plt.load_data('plotly', os.path.join(SIMULATION_DATA_FOLDER, str(scnFolder), "plot_partialData_trajectory.json"))
+                st.plotly_chart(fig, use_container_width=True)
             
             with col2:
-                st.plotly_chart(plt.load_data('plotly', os.path.join(SIMULATION_DATA_FOLDER, str(scnFolder), "plot_carMatrix.json")), 
-                                use_container_width=True)
-                st.plotly_chart(plt.load_data('plotly', os.path.join(SIMULATION_DATA_FOLDER, str(scnFolder), "plot_partialMatrix.json")), 
-                                use_container_width=True)
+                fig = plt.load_data('plotly', os.path.join(SIMULATION_DATA_FOLDER, str(scnFolder), "plot_carMatrix.json"))
+                fig.data[0]["zmax"] = 0.16
+                st.plotly_chart(fig, use_container_width=True)
+                fig = plt.load_data('plotly', os.path.join(SIMULATION_DATA_FOLDER, str(scnFolder), "plot_partialMatrix.json"))
+                fig.data[0]["zmax"] = 0.16
+                st.plotly_chart(fig, use_container_width=True)
         
         markdown("OUTPUT DATA", header='h3', color='black', showLine=False)
         col1, col2, col3 = st.columns(3)
         with col1:
             markdown(f"GA RMSE: {rowData['RMSE (Masked)']}", header='h5', color='black', showLine=False)
-            st.plotly_chart(plt.load_data('plotly', os.path.join(GA_DATA_FOLDER, str(expFolder), "plot_actual_data_masked.json")), 
-                            use_container_width=True)
-            st.plotly_chart(plt.load_data('plotly', os.path.join(GA_DATA_FOLDER, str(expFolder), "plot_fitness.json")), 
-                            use_container_width=True)
-            markdown(f"GA RMSE: {rowData['RMSE (NonMaked)']}", header='h5', color='black', showLine=False)
-            st.plotly_chart(plt.load_data('plotly', os.path.join(GA_DATA_FOLDER, str(expFolder), "plot_actual_data.json")), 
-                            use_container_width=True)
+            fig = plt.load_data('plotly', os.path.join(GA_DATA_FOLDER, str(expFolder), "plot_actual_data_masked.json"))
+            fig.data[0]["zmax"] = 0.16
+            st.plotly_chart(fig, use_container_width=True)
+            fitness = plt.load_data('plotly', os.path.join(GA_DATA_FOLDER, str(expFolder), "plot_fitness.json"))
+            fitness.layout['yaxis']['range'] = [-0.03, 0]
+            st.plotly_chart(fitness, use_container_width=True)
+            # markdown(f"GA RMSE: {rowData['RMSE (NonMaked)']}", header='h5', color='black', showLine=False)
+            # st.plotly_chart(plt.load_data('plotly', os.path.join(GA_DATA_FOLDER, str(expFolder), "plot_actual_data.json")), 
+            #                 use_container_width=True)
 
+        # st.write(fitness.layout['yaxis']['range'] = [-0.03, 0])   
         
         with col2:
             markdown(f"GA MAE: {rowData['MAE (Masked)']}", header='h5', color='black', showLine=False)
-            st.plotly_chart(plt.load_data('plotly', os.path.join(GA_DATA_FOLDER, str(expFolder), "plot_best_output_masked.json")), 
-                            use_container_width=True)
+            fig = plt.load_data('plotly', os.path.join(GA_DATA_FOLDER, str(expFolder), "plot_best_output_masked.json"))
+            fig.data[0]["zmax"] = 0.16
+            st.plotly_chart(fig, use_container_width=True)
             res_plot1 = plt.load_data('plotly', os.path.join(GA_DATA_FOLDER, str(expFolder), "plot_residuals_masked.json"))
             st.plotly_chart(res_plot1, use_container_width=True)
-            markdown(f"GA MAE: {rowData['MAE (NonMaked)']}", header='h5', color='black', showLine=False)
-            st.plotly_chart(plt.load_data('plotly', os.path.join(GA_DATA_FOLDER, str(expFolder), "plot_best_output.json")), 
-                            use_container_width=True)
+            # markdown(f"GA MAE: {rowData['MAE (NonMaked)']}", header='h5', color='black', showLine=False)
+            # st.plotly_chart(plt.load_data('plotly', os.path.join(GA_DATA_FOLDER, str(expFolder), "plot_best_output.json")), 
+            #                 use_container_width=True)
         
         with col3: 
             markdown(f"CTM RMSE: {rowData['CTM RMSE (Masked)']}", header='h5', color='black', showLine=False)
-            st.plotly_chart(plt.load_data('plotly', os.path.join(GA_DATA_FOLDER, str(expFolder), "plot_CTM_output_masked.json")), 
-                            use_container_width=True)
+            fig = plt.load_data('plotly', os.path.join(GA_DATA_FOLDER, str(expFolder), "plot_CTM_output_masked.json"))
+            fig.data[0]["zmax"] = 0.16
+            st.plotly_chart(fig, use_container_width=True)
             res_plot2 = plt.load_data('plotly', os.path.join(GA_DATA_FOLDER, str(expFolder), "plot_CTM_residuals_masked.json"))
             st.plotly_chart(res_plot2, use_container_width=True)
+
+    # Merge of simData and gaResults
+    simData = pd.read_csv("data/SimulationMetadata.csv", sep=";")
+    data = pd.merge(simData, gaRes)
+
+    col1, col2 = st.columns(2)
+    import plotly.express as px
+    import plotly.graph_objects as go
+    with col1: 
+        ga_plot = px.scatter(data, x="Car Density", y="RMSE (Masked)", hover_data=["SimulationFolder"], trendline="ols")
+        ga_plot.update_traces(marker=dict(color='red'))
+        ct_plot = px.scatter(data, x="Car Density", y="CTM RMSE (Masked)", hover_data=["SimulationFolder"], trendline="ols")
+
+        fig = go.Figure(data=ga_plot.data + ct_plot.data)
+        fig.add_vline(x=0.05768,
+                        line_width=1, line_dash="dash", line_color="black")
+        fig.update_xaxes(title_text="Opposite Lane Density [veh/m]",
+                        range=[0, 0.15], showline=True, linewidth=2, linecolor='black', mirror=True)
+        fig.update_yaxes(title_text="RMSE",
+                        range=[0, 0.025], showline=True, linewidth=2, linecolor='black', mirror=True)
+        fig.update_traces(marker=dict(size=8,
+                                    line=dict(width=1,
+                                            color='DarkSlateGrey')),
+                        selector=dict(mode='markers'))
+        fig.update_layout(title="GA-RMSE vs Opposite Lane Density", title_x=0.5, margin={"r":10,"t":40,"l":10,"b":10}, plot_bgcolor='rgba(0,0,0,0)')
+        st.plotly_chart(fig)
     
+        # gaOLS = px.get_trendline_results(ga_plot)
+        # st.write(gaOLS.px_fit_results[0].summary())
+
+        ga_plot = px.scatter(data, x="Num_visible_cells", y="RMSE (Masked)", hover_data=["SimulationFolder"], trendline="ols")
+        ga_plot.update_traces(marker=dict(color='red'))
+
+        fig = go.Figure(data=ga_plot.data)
+        fig.update_xaxes(title_text="Number of Visible Cells",
+                        range=[5, 40], showline=True, linewidth=2, linecolor='black', mirror=True)
+        fig.update_yaxes(title_text="RMSE",
+                        range=[0, 0.025], showline=True, linewidth=2, linecolor='black', mirror=True)
+        fig.update_traces(marker=dict(size=8,
+                                    line=dict(width=1,
+                                            color='DarkSlateGrey')),
+                        selector=dict(mode='markers'))
+        fig.update_layout(title="GA-RMSE vs Number of Visible Cells for GA", title_x=0.5, margin={"r":10,"t":40,"l":10,"b":10}, plot_bgcolor='rgba(0,0,0,0)')
+        st.plotly_chart(fig)
 
 
-
-
-
+    with col2: 
+        ga_plot = px.scatter(data, x="Probe Speed", y="RMSE (Masked)", hover_data=["SimulationFolder"], trendline="ols")
+        ga_plot.update_traces(marker=dict(color='red'))
+        ct_plot = px.scatter(data, x="Probe Speed", y="CTM RMSE (Masked)", hover_data=["SimulationFolder"], trendline="ols")
+        fig = go.Figure(data=ga_plot.data + ct_plot.data)
+        fig.update_xaxes(title_text="Moving Camera Speed [m/sec]",
+                        range=[2, 10], showline=True, linewidth=2, linecolor='black', mirror=True)
+        fig.update_yaxes(title_text="RMSE",
+                        range=[0, 0.025], showline=True, linewidth=2, linecolor='black', mirror=True)
+        fig.update_traces(marker=dict(size=8,
+                                    line=dict(width=1,
+                                            color='DarkSlateGrey')),
+                        selector=dict(mode='markers'))
+        fig.update_layout(title="RMSE vs Moving Camera Speed", title_x=0.5, margin={"r":10,"t":40,"l":10,"b":10}, plot_bgcolor='rgba(0,0,0,0)')
+        st.plotly_chart(fig)
 
 ################################################################################################
                                     #### STREAMLIT APP ####
@@ -304,7 +397,6 @@ def main()-> None:
     page_names_to_funcs = {
         "SUMO Simulated Data": sumo_simulation_data,
         "FD Estimation": fd_estimation,
-        "CTM Results": ctm_results,
         "GA Results": ga_results
     }
     with st.sidebar:
