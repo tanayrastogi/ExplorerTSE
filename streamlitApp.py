@@ -400,7 +400,7 @@ def main()-> None:
         "GA Results": ga_results
     }
     with st.sidebar:
-        selected_page = st.selectbox("Select Type of Data", page_names_to_funcs.keys(), index=0)
+        selected_page = st.selectbox("Select Type of Data", page_names_to_funcs.keys(), index=2)
         st.markdown("""<hr style="height:2px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
     page_names_to_funcs[selected_page]()
 
