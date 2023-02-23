@@ -730,10 +730,10 @@ def plot_fd2(params, SIMULATION_DATA_FOLDER):
     # Plotting FD
     fdTRAJ = fdTRAJ.rename(columns={"Density": "density", "Flow": "flow", "Speed": "speed"})
     fig = plot_fd(fdTRAJ)
-    fig = add_charateristic_line_to_fd(fig,
-                                        vf=params['vf'],
-                                        rho_c=params['rho_c'],
-                                        rho_j=params['rho_j'])
+    # fig = add_charateristic_line_to_fd(fig,
+    #                                     vf=params['vf'],
+    #                                     rho_c=params['rho_c'],
+    #                                     rho_j=params['rho_j'])
     return fig
 
 
