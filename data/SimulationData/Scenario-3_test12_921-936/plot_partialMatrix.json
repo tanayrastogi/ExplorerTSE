@@ -7,6 +7,62 @@
         }
       },
       "hovertemplate": "Time: %{x}<br>Space: %{y}<br>Density: %{z}<extra></extra>",
+      "text": [
+        [
+          null,
+          null,
+          null,
+          null,
+          0.921,
+          1.0,
+          0.797,
+          null
+        ],
+        [
+          null,
+          null,
+          0.817,
+          1.0,
+          1.0,
+          0.709,
+          null,
+          null
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          0.976,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          1.0,
+          0.988,
+          0.679,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "textfont": {
+        "size": 10
+      },
+      "texttemplate": "%{text}",
       "x": [
         "(921.0, 923.0]",
         "(923.0, 925.0]",
@@ -32,18 +88,18 @@
           null,
           null,
           null,
-          0.06875,
+          0.07462939719800535,
           0.1,
-          0.08125,
+          0.10192081536652295,
           null
         ],
         [
           null,
           null,
-          0.05,
+          0.06118780832919041,
           0.09375,
           0.10625,
-          0.06875,
+          0.09690135882132712,
           null,
           null
         ],
@@ -51,7 +107,7 @@
           0.05,
           0.1,
           0.125,
-          0.1,
+          0.10243113906627616,
           null,
           null,
           null,
@@ -59,8 +115,8 @@
         ],
         [
           0.15,
-          0.1,
-          0.05625,
+          0.10118897040222616,
+          0.0828920101312457,
           null,
           null,
           null,
@@ -78,7 +134,7 @@
           null
         ]
       ],
-      "zmax": 0.2,
+      "zmax": 0.15,
       "zmin": 0,
       "type": "heatmap"
     }

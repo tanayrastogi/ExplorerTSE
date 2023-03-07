@@ -7,6 +7,57 @@
         }
       },
       "hovertemplate": "Time: %{x}<br>Space: %{y}<br>Density: %{z}<extra></extra>",
+      "text": [
+        [
+          null,
+          null,
+          null,
+          null,
+          0.975,
+          1.0,
+          null
+        ],
+        [
+          null,
+          null,
+          0.891,
+          1.0,
+          0.998,
+          null,
+          null
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          0.929,
+          null,
+          null,
+          null
+        ],
+        [
+          1.0,
+          0.964,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "textfont": {
+        "size": 10
+      },
+      "texttemplate": "%{text}",
       "x": [
         "(1041.0, 1043.0]",
         "(1043.0, 1045.0]",
@@ -32,7 +83,7 @@
           null,
           null,
           null,
-          0.0875,
+          0.08976948478727839,
           0.0875,
           null,
           null
@@ -40,9 +91,9 @@
         [
           null,
           null,
-          0.08125,
+          0.09118647634412373,
           0.13125,
-          0.1,
+          0.10016276449229998,
           null,
           null,
           null
@@ -51,7 +102,7 @@
           0.1,
           0.1375,
           0.10625,
-          0.0875,
+          0.0941587920772102,
           null,
           null,
           null,
@@ -59,7 +110,7 @@
         ],
         [
           0.13125,
-          0.1,
+          0.1037798569783846,
           null,
           null,
           null,
@@ -78,7 +129,7 @@
           null
         ]
       ],
-      "zmax": 0.2,
+      "zmax": 0.15,
       "zmin": 0,
       "type": "heatmap"
     }

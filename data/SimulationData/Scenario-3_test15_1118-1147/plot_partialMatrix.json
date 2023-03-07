@@ -7,6 +7,87 @@
         }
       },
       "hovertemplate": "Time: %{x}<br>Space: %{y}<br>Density: %{z}<extra></extra>",
+      "text": [
+        [
+          null,
+          0.708,
+          1.0,
+          0.792,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          0.784,
+          1.0,
+          0.756,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          1.0,
+          0.737,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          0.675,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "textfont": {
+        "size": 10
+      },
+      "texttemplate": "%{text}",
       "x": [
         "(1118.0, 1120.0]",
         "(1120.0, 1122.0]",
@@ -36,7 +117,7 @@
       "z": [
         [
           null,
-          0.025,
+          0.03531229309203266,
           0.0,
           0.0,
           null,
@@ -54,7 +135,7 @@
         [
           0.0,
           0.01875,
-          0.025,
+          0.03308929974769409,
           null,
           null,
           null,
@@ -70,7 +151,7 @@
         ],
         [
           0.05,
-          0.00625,
+          0.008484642796538266,
           null,
           null,
           null,
@@ -86,7 +167,7 @@
           null
         ],
         [
-          0.03125,
+          0.046319885126684904,
           null,
           null,
           null,
@@ -120,7 +201,7 @@
           null
         ]
       ],
-      "zmax": 0.2,
+      "zmax": 0.15,
       "zmin": 0,
       "type": "heatmap"
     }

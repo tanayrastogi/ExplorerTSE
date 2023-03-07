@@ -198,7 +198,7 @@ def plot_trajectories(carData, probeData, title,
     return fig
 
 
-def plot_aggregated_density_matrix(matrix, title, verbose=False)->go.Figure:
+def plot_aggregated_density_matrix(matrix, title, verbose=False, overlaparea=None)->go.Figure:
     """
     Function to plot the heatmap for the density matrix from the space-time-density matrix.
     """
@@ -211,8 +211,11 @@ def plot_aggregated_density_matrix(matrix, title, verbose=False)->go.Figure:
                 xgap=2,
                 ygap=2,
                 z = matrix.values,
+                text=np.round(overlaparea, 3) if overlaparea is not None else None,
+                texttemplate="%{text}",
+                textfont={"size":10},
                 zmin=0,
-                zmax=0.2,
+                zmax=0.15,
                 colorbar=dict(title='Density'),
                 hovertemplate='Time: %{x}<br>Space: %{y}<br>Density: %{z}<extra></extra>'
             ))
@@ -224,7 +227,7 @@ def plot_aggregated_density_matrix(matrix, title, verbose=False)->go.Figure:
     return fig
 
 
-def plot_fitness(repetation:int, num_generations:int, generation_fitness, max_fitness_value:float)->go.Figure:
+def plot_fitness(repetation:int, num_generations:int, generation_fitness, max_fitness_value=None)->go.Figure:
     fig = go.Figure()
     for itr in range(repetation):
         fig.add_trace(go.Scatter(x=list(range(num_generations)), y=list(generation_fitness[:, itr]),
@@ -236,14 +239,35 @@ def plot_fitness(repetation:int, num_generations:int, generation_fitness, max_fi
                                 mode="lines",
                                 name="Mean-Fit",
                                 line = dict(color='firebrick', width=4, dash='dot')))
-    fig.add_hline(y=max_fitness_value,
-                  line_width=3, line_dash="dash", line_color="green")
+    if max_fitness_value is not None:
+        fig.add_hline(y=max_fitness_value,
+                    line_width=3, line_dash="dash", annotation_text="MaxFit", annotation_position="bottom right")
     fig.update_xaxes(title_text='Generations')
     fig.update_yaxes(title_text='(-)RMSE on Partial Data', range=[-0.05, 0])
     fig.update_layout(title="Fitness vs Generation for {} Repetitions".format(repetation),
                       title_x=0.5, margin={"r":10,"t":40,"l":10,"b":0}, paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
 
     return fig
+
+def plot_fd_fitness(repetation:int, num_generations:int, generation_fitness)->go.Figure:
+    fig = go.Figure()
+    for itr in range(repetation):
+        fig.add_trace(go.Scatter(x=list(range(num_generations)), y=list(generation_fitness[:, itr]),
+                                mode="lines",
+                                name="Rep-{}".format(itr),
+                                line = dict(width=1)))
+
+    fig.add_trace(go.Scatter(x=list(range(num_generations)), y=generation_fitness.mean(axis=1),
+                                mode="lines",
+                                name="Mean-Fit",
+                                line = dict(color='firebrick', width=4, dash='dot')))
+    fig.update_xaxes(title_text='Generations')
+    fig.update_yaxes(title_text='R2 score')
+    fig.update_layout(title="Fitness vs Generation for {} Repetitions".format(repetation),
+                      title_x=0.5, margin={"r":10,"t":40,"l":10,"b":0}, paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
+
+    return fig
+
 
 def plot_resiual_matrix(actual, predicted):
      ## Difference in the real and model values
@@ -258,8 +282,8 @@ def plot_resiual_matrix(actual, predicted):
                             text=np.round(residuals, 3),
                             texttemplate="%{text}",
                             textfont={"size":10},
-                            zmin=residuals.min(),
-                            zmax=residuals.max(),
+                            zmin=0,
+                            zmax=0.04,
                             colorscale="Blues",
                             colorbar=dict(title='Residuals'),
                             hovertemplate='Time: %{x}<br>Space: %{y}<br>Residual: %{z}<extra></extra>'))
@@ -550,12 +574,14 @@ def init_rmse_plot():
     fig.update_layout(title="RMSE vs Experiment", title_x=0.5, margin={"r":10,"t":40,"l":10,"b":0}, paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
     return fig
 
-def plot_rmse(fig, x_data, y_data, name) -> go.Figure:
+def plot_rmse(fig, x_data, y_data, name, line_color=None, fill_type=None) -> go.Figure:
     fig.add_trace(go.Scatter(x=x_data,
                              y=y_data,
                              mode="lines+markers",
                              marker=dict(size=4),
-                             fill='tozeroy',
+                             line_color=line_color,
+                             fill=fill_type,
+                             fillcolor=line_color,
                              hovertemplate='EXP: %{x}<br>RMSE: %{y}<extra></extra>',
                              name=name))
     return fig
@@ -730,10 +756,10 @@ def plot_fd2(params, SIMULATION_DATA_FOLDER):
     # Plotting FD
     fdTRAJ = fdTRAJ.rename(columns={"Density": "density", "Flow": "flow", "Speed": "speed"})
     fig = plot_fd(fdTRAJ)
-    # fig = add_charateristic_line_to_fd(fig,
-    #                                     vf=params['vf'],
-    #                                     rho_c=params['rho_c'],
-    #                                     rho_j=params['rho_j'])
+    fig = add_charateristic_line_to_fd(fig,
+                                        vf=params['vf'],
+                                        rho_c=params['rho_c'],
+                                        rho_j=params['rho_j'])
     return fig
 
 

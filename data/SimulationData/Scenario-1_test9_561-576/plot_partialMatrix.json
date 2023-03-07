@@ -7,6 +7,62 @@
         }
       },
       "hovertemplate": "Time: %{x}<br>Space: %{y}<br>Density: %{z}<extra></extra>",
+      "text": [
+        [
+          null,
+          null,
+          null,
+          null,
+          0.9,
+          1.0,
+          0.745,
+          null
+        ],
+        [
+          null,
+          null,
+          0.769,
+          1.0,
+          1.0,
+          0.698,
+          null,
+          null
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          0.989,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          1.0,
+          0.997,
+          0.731,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "textfont": {
+        "size": 10
+      },
+      "texttemplate": "%{text}",
       "x": [
         "(561.0, 563.0]",
         "(563.0, 565.0]",
@@ -32,18 +88,18 @@
           null,
           null,
           null,
-          0.04375,
+          0.048621240536222826,
           0.08125,
-          0.025,
+          0.03355001048437827,
           null
         ],
         [
           null,
           null,
-          0.05,
+          0.06503271958704222,
           0.025,
           0.04375,
-          0.04375,
+          0.06269873258990549,
           null,
           null
         ],
@@ -51,7 +107,7 @@
           0.1,
           0.15,
           0.1,
-          0.125,
+          0.1263902932254803,
           null,
           null,
           null,
@@ -59,8 +115,8 @@
         ],
         [
           0.15,
-          0.1,
-          0.11875,
+          0.10028204324663115,
+          0.15,
           null,
           null,
           null,
@@ -78,7 +134,7 @@
           null
         ]
       ],
-      "zmax": 0.2,
+      "zmax": 0.15,
       "zmin": 0,
       "type": "heatmap"
     }
