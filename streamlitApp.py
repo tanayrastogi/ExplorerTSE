@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd 
 from st_aggrid import GridOptionsBuilder, AgGrid
 import plotting as plt
+import numpy as np
 st.set_page_config(layout="wide")
 
 MAIN_FOLDER            = "data"
@@ -51,6 +52,9 @@ def show_table(table):
     selected_data = selected_data["selected_rows"]
     return selected_data
 
+## For Fitness calculation
+def rmse_fitness(error):
+    return  - np.sqrt(np.nanmean(np.square(error)))
 
 
                                     #### EXPERIMENTS ####
@@ -73,6 +77,11 @@ def testing():
         gaRMSE          = rowData['RMSE (Masked)']
         ctmRMSE         = rowData['CTM RMSE (Masked)']
 
+        # Simulation Data
+        actual  = plt.load_data('dataframe', os.path.join(SIMULATION_DATA_FOLDER, scnFolder, "carMatrix.pkl"))
+        partial = plt.load_data('dataframe', os.path.join(SIMULATION_DATA_FOLDER, scnFolder, "partialMatrix.pkl"))
+        overlap = plt.load_data('dataframe', os.path.join(SIMULATION_DATA_FOLDER, scnFolder, "overlapPercent.pkl")).fillna(value=np.nan)
+
         if rowData["EXP"] <=5:
             name = f'EXP: {rowData["EXP"]} - With all partial cells for fitness'
         elif (rowData["EXP"] > 5) and  (rowData["EXP"] <= 10):
@@ -80,8 +89,6 @@ def testing():
 
         markdown(name, header='h2', color='red', showLine=True)
         markdown("INPUT DATA", header='h3', color='black', showLine=True)
-        actual    = plt.load_data('dataframe', os.path.join(SIMULATION_DATA_FOLDER, scnFolder, "carMatrix.pkl"))
-        partial = plt.load_data('dataframe', os.path.join(SIMULATION_DATA_FOLDER, scnFolder, "partialMatrix.pkl"))
         col1, col2 = st.columns(2)
         with col1:
             fig = plt.load_data('plotly', os.path.join(SIMULATION_DATA_FOLDER, str(scnFolder), "plot_carData_trajectory.json"))
@@ -115,10 +122,15 @@ def testing():
             fig.data[0]["zmax"] = 0.15
             fig.update_layout(title="MODEL OUTPUT FROM GA", title_x=0.5)
             st.plotly_chart(fig, use_container_width=True)
+            
             ## FITNESS VALUE FOR GA
             fig = plt.load_data('plotly', os.path.join(GA_DATA_FOLDER, str(expFolder), "plot_fitness_Residual_GA.json"))
-            fig.update_layout(title="RESIDUAL: PARTIAL vs GA", title_x=0.5)
+            error = pd.DataFrame(fig.data[0]['z'], index=overlap.index, columns=overlap.columns).fillna(value=np.nan)
+            if (rowData["EXP"] > 5) and  (rowData["EXP"] <= 10):
+                error = error[overlap >= .99]
+            fig.update_layout(title=f"RESIDUAL: PARTIAL vs GA /FIT: {round(rmse_fitness(error), 6)}", title_x=0.5)
             st.plotly_chart(fig, use_container_width=True)
+            
             ## RESIDUAL ACTUAL VS BEST MODEL
             res = plt.load_data('plotly', os.path.join(GA_DATA_FOLDER, str(expFolder), "plot_residuals_masked.json"))
             res.update_layout(title=f"RESIDUAL: Actual vs GA /RMSE: {gaRMSE}", title_x=0.5)
@@ -130,10 +142,15 @@ def testing():
             fig = plt.load_data('plotly', os.path.join(GA_DATA_FOLDER, str(expFolder), "plot_CTM_output_masked.json"))
             fig.update_layout(title="MODEL OUTPUT FROM CTM", title_x=0.5)
             st.plotly_chart(fig, use_container_width=True)
+            
             ## FITNESS VALUE FOR GA
             fig = plt.load_data('plotly', os.path.join(GA_DATA_FOLDER, str(expFolder), "plot_fitness_Residual_CTM.json"))
-            fig.update_layout(title="RESIDUAL: PARTIAL vs CTM", title_x=0.5)
+            error = pd.DataFrame(fig.data[0]['z'], index=overlap.index, columns=overlap.columns).fillna(value=np.nan)
+            if (rowData["EXP"] > 5) and  (rowData["EXP"] <= 10):
+                error = error[overlap >= .99]
+            fig.update_layout(title=f"RESIDUAL: PARTIAL vs CTM /FIT: {round(rmse_fitness(error), 6)}", title_x=0.5)
             st.plotly_chart(fig, use_container_width=True)
+            
             ## RESIDUAL ACTUAL VS CTM BEST MODEL
             fig = plt.load_data('plotly', os.path.join(GA_DATA_FOLDER, str(expFolder), "plot_CTM_residuals_masked.json"))
             fig.update_layout(title=f"RESIDUAL: Actual vs CTM /RMSE: {ctmRMSE}", title_x=0.5)
@@ -144,6 +161,7 @@ def testing():
 ################################################################################################
 def main()-> None:
     testing()
+    pass
 
 
 if __name__ =="__main__":
