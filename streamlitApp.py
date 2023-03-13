@@ -8,6 +8,7 @@ st.set_page_config(layout="wide")
 
 MAIN_FOLDER            = "data"
 SIMULATION_DATA_FOLDER = os.path.join(MAIN_FOLDER, "SimulationData")
+SIMULATION_METATDATA   = os.path.join(MAIN_FOLDER, "SimulationMetadata.csv")
 GA_DATA_FOLDER  = os.path.join(MAIN_FOLDER, "GAExpResult")
 GA_METATDATA    = os.path.join(MAIN_FOLDER, "GAResult.csv")
 
@@ -60,11 +61,65 @@ def rmse_fitness(error):
                                     #### EXPERIMENTS ####
 ################################################################################################
 def testing():
+    ###### DROP Certain GA EXP because of BAD simulation data #####
+    drop_exp = ["Scenario-3_test16_1197-1199", "Scenario-5_test16_995-1005", "Scenario-7_test0_5-14", "Scenario-8_test2_211-240"]
+
     ### Function to show each generation development of best solution for EXP Scenario-1_test7_441-456 ####
     # GA Results
     gaRes = pd.read_csv(GA_METATDATA, sep=";", header=0)
+    ## Drop scenarios ##
+    idx_to_drop = gaRes[gaRes["SimulationFolder"].isin(drop_exp)].index
+    gaRes.drop(idx_to_drop, axis=0, inplace=True)
     gaRes.set_index("EXP", inplace=True, drop=False)
     
+     ################ RMSE PLOT ################
+    fig = plt.init_rmse_plot()
+    fig = plt.plot_rmse(fig,
+                    x_data=gaRes["EXP"], y_data=gaRes["RMSE (Masked)"],
+                    name="RMSE-GA") 
+    fig = plt.plot_rmse(fig,
+                    x_data=gaRes["EXP"], y_data=gaRes["CTM RMSE (Masked)"],
+                    name="RMSE-CTM")                
+    st.plotly_chart(fig, use_container_width=True)
+
+    ################ SUMMARY PLOT VS SPEED AND DENSITY ################
+    simData = pd.read_csv(SIMULATION_METATDATA, sep=";", header=0)
+    merge = pd.merge(simData, gaRes)
+    col1, col2 = st.columns(2)
+    with col1: 
+        ga_plot = plt.px.scatter(merge, x="Car Density", y="RMSE (Masked)", hover_data=["SimulationFolder"], trendline="ols")
+        ga_plot.update_traces(marker=dict(color='red'))
+        ct_plot = plt.px.scatter(merge, x="Car Density", y="CTM RMSE (Masked)", hover_data=["SimulationFolder"], trendline="ols")
+
+        fig = plt.go.Figure(data=ga_plot.data + ct_plot.data)
+        fig.add_vline(x=0.05768,
+                        line_width=1, line_dash="dash", line_color="black")
+        fig.update_xaxes(title_text="Opposite Lane Density [veh/m]",
+                        range=[0, 0.15], showline=True, linewidth=2, linecolor='black', mirror=True)
+        fig.update_yaxes(title_text="RMSE",
+                        range=[0, 0.02], showline=True, linewidth=2, linecolor='black', mirror=True)
+        fig.update_traces(marker=dict(size=8,
+                                    line=dict(width=1,
+                                            color='DarkSlateGrey')),
+                        selector=dict(mode='markers'))
+        fig.update_layout(title="GA-RMSE vs Opposite Lane Density", title_x=0.5, margin={"r":10,"t":40,"l":10,"b":10}, plot_bgcolor='rgba(0,0,0,0)')
+        st.plotly_chart(fig)
+    with col2: 
+        ga_plot = plt.px.scatter(merge, x="Probe Speed", y="RMSE (Masked)", hover_data=["SimulationFolder"], trendline="ols")
+        ga_plot.update_traces(marker=dict(color='red'))
+        ct_plot = plt.px.scatter(merge, x="Probe Speed", y="CTM RMSE (Masked)", hover_data=["SimulationFolder"], trendline="ols")
+        fig = plt.go.Figure(data=ga_plot.data + ct_plot.data)
+        fig.update_xaxes(title_text="Moving Camera Speed [m/sec]",
+                        range=[2, 10], showline=True, linewidth=2, linecolor='black', mirror=True)
+        fig.update_yaxes(title_text="RMSE",
+                        range=[0, 0.02], showline=True, linewidth=2, linecolor='black', mirror=True)
+        fig.update_traces(marker=dict(size=8,
+                                    line=dict(width=1,
+                                            color='DarkSlateGrey')),
+                        selector=dict(mode='markers'))
+        fig.update_layout(title="RMSE vs Moving Camera Speed", title_x=0.5, margin={"r":10,"t":40,"l":10,"b":10}, plot_bgcolor='rgba(0,0,0,0)')
+        st.plotly_chart(fig)
+
     # GA METADATA TABLE
     data = gaRes.copy()
     data = data[["EXP", "SimulationFolder", "Free Flow Speed [m/sec]", "Jam Density", "Opt Density",
@@ -82,10 +137,7 @@ def testing():
         partial = plt.load_data('dataframe', os.path.join(SIMULATION_DATA_FOLDER, scnFolder, "partialMatrix.pkl"))
         overlap = plt.load_data('dataframe', os.path.join(SIMULATION_DATA_FOLDER, scnFolder, "overlapPercent.pkl")).fillna(value=np.nan)
 
-        if rowData["EXP"] <=5:
-            name = f'EXP: {rowData["EXP"]} - With all partial cells for fitness'
-        elif (rowData["EXP"] > 5) and  (rowData["EXP"] <= 10):
-            name = f'EXP: {rowData["EXP"]} - With partial cells with area coverage > 0.99 for fitness'
+        name = f'EXP: {rowData["EXP"]} - With all partial cells for fitness'
 
         markdown(name, header='h2', color='red', showLine=True)
         markdown("INPUT DATA", header='h3', color='black', showLine=True)
