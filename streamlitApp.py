@@ -64,6 +64,50 @@ def testing():
     ###### DROP Certain GA EXP because of BAD simulation data #####
     drop_exp = ["Scenario-3_test16_1197-1199", "Scenario-5_test16_995-1005", "Scenario-7_test0_5-14", "Scenario-8_test2_211-240"]
 
+    ############ GA Param Search Plots ###############
+    search_data = pd.read_csv(os.path.join("data/param_search_fit.csv"), sep=";", header=0)
+    selected_row = search_data[search_data["MeanFit"] == search_data["MeanFit"].min()].index.to_list()
+    
+    ### RMSE Value for all EXP ###
+    rmse_data = pd.read_csv(os.path.join("data/param_search_rmse.csv"), sep=";", header=0, index_col=0)
+    temp = pd.DataFrame(rmse_data.mean(axis=0))
+    temp.rename(columns={0: "AVG. RMSE"}, inplace=True)
+    temp["NAME"] = temp.index.to_list()
+    # st.dataframe(temp) 
+    search_data = search_data.merge(temp, on="NAME")
+
+    col1, col2 = st.columns(2, gap="small")
+    ## PLOT FOR MUTATION AND TOUR ##
+    with col1: 
+        search_tour_mut = search_data[(search_data["Generation"] == 60) & (search_data["Population"] == 500)]
+        # Plot for GA Param Search 
+        fig = plt.go.Figure()
+        for tour, frame in search_tour_mut.groupby("Tour"):
+            fig.add_trace(plt.go.Scatter(x=frame["Mutation"], y=frame["MeanFit"],
+                                        name=f"TOUR_{tour}",
+                                        customdata= frame["EXP"],
+                                        hovertemplate='EXP: %{customdata}<br>Mutation: %{x}<br>FIT: %{y}<extra></extra>'))
+        fig.update_xaxes(title_text='Mutation')
+        fig.update_yaxes(title_text='AVG FITNESS (140 EXP)')
+        fig.update_layout(title="AVG FIT / Tournament - Mutation", title_x=0.5, margin={"r":10,"t":40,"l":10,"b":0})
+        st.plotly_chart(fig, use_container_width=True)
+
+    ## PLOT FOR GENERATION AND POPULATION ##  
+    with col2:   
+        search_gen_pop = search_data[search_data["Population"] != 500]
+        fig = plt.go.Figure()
+        for gen, frame in search_gen_pop.groupby("Generation"):
+            fig.add_trace(plt.go.Scatter(x=frame["Population"], y=frame["MeanFit"],
+                                         name=f"GEN_{gen}",
+                                         customdata= frame["EXP"],
+                                         hovertemplate='EXP: %{customdata}<br>Population: %{x}<br>FIT: %{y}<extra></extra>'))
+        fig.update_xaxes(title_text='Population')
+        fig.update_yaxes(title_text='AVG FITNESS (140 EXP)')
+        fig.update_layout(title="AVG FIT / Generation - Population", title_x=0.5, margin={"r":10,"t":40,"l":10,"b":0})
+        st.plotly_chart(fig, use_container_width=True)
+
+
+
     ### Function to show each generation development of best solution for EXP Scenario-1_test7_441-456 ####
     # GA Results
     gaRes = pd.read_csv(GA_METATDATA, sep=";", header=0)
@@ -80,6 +124,19 @@ def testing():
     fig = plt.plot_rmse(fig,
                     x_data=gaRes["EXP"], y_data=gaRes["CTM RMSE (Masked)"],
                     name="RMSE-CTM")                
+    fig.add_trace(plt.go.Scatter(x=gaRes["EXP"],
+                    y=rmse_data.max(axis=1),
+                    fill=None,
+                    mode='lines+markers',
+                    line_color='rgba(0,100,80,0.01)',
+                    showlegend=False,
+                ))
+    fig.add_trace(plt.go.Scatter(
+        x=gaRes["EXP"],
+        y=rmse_data.min(axis=1),
+        fill='tonexty', # fill area between trace0 and trace1
+        mode='lines+markers', line_color='rgba(0,100,80,0.01)',
+        name="Min-Max"))
     st.plotly_chart(fig, use_container_width=True)
 
     ################ SUMMARY PLOT VS SPEED AND DENSITY ################
@@ -122,9 +179,8 @@ def testing():
 
     # GA METADATA TABLE
     data = gaRes.copy()
-    data = data[["EXP", "SimulationFolder", "Free Flow Speed [m/sec]", "Jam Density", "Opt Density",
-                "N Generations", "N Repeat", "N Population", "N MatingParents", "k Selection", 
-                "Mutation Probabilities", "RMSE (Masked)", "CTM RMSE (Masked)"]]
+    data = data[["EXP", "SimulationFolder", "Free Flow Speed [m/sec]", "Jam Density", "Opt Density", 
+                "RMSE (Masked)", "CTM RMSE (Masked)"]]
     selected_data = show_table(data.round(5))
     for rowData in selected_data:
         expFolder       = rowData['EXP']
